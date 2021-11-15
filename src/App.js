@@ -11,12 +11,13 @@ function App(props) {
       <div class="apps">
         <ul>
           <div>
-            {avatarData.map((data, key) => {
+            {avatarData.map((data) => {
               return (
                   <Avatar
                     id={data.id}
                     name={data.name}
                     img={data.img}
+                    points="42"
                   />
               );
             })}
