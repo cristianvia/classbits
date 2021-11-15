@@ -16,6 +16,7 @@ function App(props) {
                   <Avatar
                     id={data.id}
                     name={data.name}
+                    surname={data.surname}
                     img={data.img}
                     points={data.id}
                   />
