@@ -1,15 +1,17 @@
-span {
+.name {
 	display: block;
 	color: black;
-  height: 50px;
   font-weight: bold;
   font-size: 20px;
 }
 
-input {
-  width:50px;
-  text-align:center;
-  border-radius: 50px;
+.surname {
+	display: block;
+	color: black;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  color:#979A9A;
 }
 
 .add-count{
@@ -40,4 +42,21 @@ input {
   font-weight: bold;
   padding: 0 10px;
   height:25px;
+}
+
+.circle {
+  border: 5px solid white;
+  background-color: grey;
+  height: 30px;
+  border-radius:50%;
+  width: 30px;
+  color:white;
+  font-weight: 500;
+  justify-content: right;
+  position:relative; 
+  right:-200px; 
+  top: 250px; 
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
 }
