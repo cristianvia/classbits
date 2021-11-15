@@ -12,7 +12,7 @@ input {
   border-radius: 50px;
 }
 
-.qty-inc{
+.add-count{
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -24,9 +24,10 @@ input {
   cursor: pointer;
   font-weight: bold;
   padding: 0 10px;
+  height:25px;
 }
 
-.qty-dec{
+.subtract-count{
   background-color: #f44336; /* Red */
   border: none;
   color: white;
@@ -38,4 +39,5 @@ input {
   cursor: pointer;
   font-weight: bold;
   padding: 0 10px;
+  height:25px;
 }
