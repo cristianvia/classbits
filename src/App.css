@@ -15,10 +15,11 @@ html{
   justify-content: center;
 }
 
+/* Avatar size */
 .apps ul li {
   display: inline-block;
-	height: 280px;
-	width: 280px;
+	height: 225px;
+	width: 225px;
 	color: black;
   margin: 10px;
 	text-align: center;
