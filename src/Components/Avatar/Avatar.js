@@ -16,9 +16,10 @@ function Avatar(props) {
 
     return (
         <li id={props.id}>
+            <span class="circle">{count}</span>
             <img src={props.img} width="250" alt="Avatar" />
-            <span>{props.name}</span>
-            <span>{count}</span>
+            <span class="name">{props.name}</span>
+            <span class="surname">{props.surname}</span>
             <button class="subtract-count" onClick={() => setCount(count - 1)}>-</button>&nbsp;
             <button class="add-count" onClick={() => setCount(count + 1)}>+</button>
         </li>
