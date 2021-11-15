@@ -2,7 +2,7 @@ import "./styles.css";
 
 function Avatar(props) {
     return (
-        <li id="avatar1">
+        <li id={props.id}>
             <img src={props.img} width="250" alt=""/>
             <span>{props.name}</span>
             <div class="qty-holder">
