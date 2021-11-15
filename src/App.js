@@ -1,12 +1,28 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Avatar from './Components/Avatar/Avatar';
 
-function App() {
+import { avatarData } from "./data";
+
+function App(props) {
+
   return (
-    <div className="App" class="apps">
-      <ul>
-        <Avatar name="User #" img="https://i.ibb.co/HCZ0McD/chibi-20211115-160456.png"/>
+    <div className="App">
+      <div class="apps">
+        <ul>
+          <div>
+            {avatarData.map((data, key) => {
+              return (
+                  <Avatar
+                    id={key}
+                    name={data.name}
+                    img={data.img}
+                  />
+              );
+            })}
+          </div>
         </ul>
+      </div>
     </div>
   );
 }
