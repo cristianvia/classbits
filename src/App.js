@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import Avatar from './Components/Avatar/Avatar';
 
@@ -10,18 +10,18 @@ function App(props) {
     <div className="App">
       <div class="apps">
         <ul>
-          <div>
             {avatarData.map((data) => {
               return (
+                <div>
                   <Avatar
                     id={data.id}
                     name={data.name}
                     img={data.img}
-                    points="42"
+                    points={data.id}
                   />
+                </div>
               );
             })}
-          </div>
         </ul>
       </div>
     </div>
