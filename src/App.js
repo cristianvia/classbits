@@ -14,7 +14,7 @@ function App(props) {
             {avatarData.map((data, key) => {
               return (
                   <Avatar
-                    id={key}
+                    id={data.id}
                     name={data.name}
                     img={data.img}
                   />
