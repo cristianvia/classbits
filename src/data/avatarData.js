@@ -1,18 +1,18 @@
 export const avatarData = [
     {
-        id: 1,
+        id: 0,
         name: "Tota la classe",
         surname: "",
         img: "../../images/chibi_classroom.png"
     },
     {
-        id: 2,
+        id: 1,
         name: "Cristian",
         surname: "Viaplana",
         img: "../../images/1.png"
     },
     {
-        id: 3,
+        id: 2,
         name: "Test",
         surname: "Tester",
         img: "../../images/1.png"
