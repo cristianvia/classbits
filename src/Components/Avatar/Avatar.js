@@ -16,7 +16,7 @@ function Avatar(props) {
 
     return (
         <li id={props.id}>
-            <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" :"circle"}>{count}</span>
+            <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{count}</span>
             <img src={props.img} width="250" alt="Avatar" />
             <span class="name">{props.name}</span>
             <span class="surname">{props.surname}</span>
