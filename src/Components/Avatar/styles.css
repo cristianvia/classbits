@@ -60,3 +60,37 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.circleGreen {
+    border: 5px solid white;
+    background-color: green;
+    height: 30px;
+    border-radius:50%;
+    width: 30px;
+    color:white;
+    font-weight: 500;
+    justify-content: right;
+    position:relative; 
+    right:-180px; 
+    top: 250px; 
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.circleRed {
+  border: 5px solid white;
+  background-color: red;
+  height: 30px;
+  border-radius:50%;
+  width: 30px;
+  color:white;
+  font-weight: 500;
+  justify-content: right;
+  position:relative; 
+  right:-180px; 
+  top: 250px; 
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+}
