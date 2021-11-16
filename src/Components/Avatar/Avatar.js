@@ -14,14 +14,22 @@ function Avatar(props) {
         window.localStorage.setItem(key, JSON.stringify(count));
     }, [count]);
 
+    const substractAll = () => {
+        Array.from(document.querySelectorAll(".subtract-count")).forEach(button=>button.click())
+      }
+    
+      const addAll = () => {
+        Array.from(document.querySelectorAll(".add-count")).forEach(button=>button.click())
+      }
+
     return (
         <li id={props.id}>
-            <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{count}</span>
+            <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id == 0) ? "" : count}</span>
             <img src={props.img} width="250" alt="Avatar" />
             <span class="name">{props.name}</span>
             <span class="surname">{props.surname}</span>
-            <button class="subtract-count" onClick={() => setCount(count - 1)}>-</button>&nbsp;
-            <button class="add-count" onClick={() => setCount(count + 1)}>+</button>
+            <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
+            <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
         </li>
     );
 }
