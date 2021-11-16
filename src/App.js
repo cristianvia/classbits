@@ -20,7 +20,6 @@ function App(props) {
                   name={data.name}
                   surname={data.surname}
                   img={data.img}
-                  points={data.id}
                 />
               </div>
             );
