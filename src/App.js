@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Avatar from './Components/Avatar/Avatar';
 
-import { avatarData } from "./data";
+import { avatarData } from "./avatarData";
 
 function App(props) {
 
