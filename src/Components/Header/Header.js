@@ -1,6 +1,6 @@
 import "./styles.css";
 import { classData } from "../../data/classData";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
