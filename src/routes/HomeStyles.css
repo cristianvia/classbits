@@ -1,12 +1,104 @@
+body{
+  font-family: proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
 .column {
-    float: left;
-    width: 50%;
-    text-align: center;
+  flex: 50%;
+}
+
+  .title{
+    font-size: 60px;
+    font-weight: 700;
+    color:#2C2A50;
+  }
+
+  .subtitle{
+    font-size: 25px;
+    font-weight: 700;
+    color:#7a7a7a;
+    line-height: 1.5;
+  }
+
+  .upAndDown {
+    animation: MoveUpDown 1s linear infinite;
+    left: 0;
+    bottom: 0;
   }
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+
+  .cardDescription{
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 15px;
+    width: 200px;
+    margin: 10px;
+    font-size:20px;
+    line-height: 1.5;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    border-color: rgb(131, 28, 28);
+    border: 1px solid;
+  }
+  
+  .cardDescription:hover{
+    background-color:#F9F9F9;
+    box-shadow: 0 0.2rem 0.5rem #aaa;
+
+  }
+
+  .container {
+    display: flex;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
+
+  .steps {
+    border: 5px solid white;
+    background-color: #2C2A50;
+    height: 30px;
+    border-radius:50%;
+    width: 30px;
+    color:white;
+    font-weight: 500;
+    justify-content: right;
+    position:relative; 
+    right:0px; 
+    top: 0px; 
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 850px) {
+    #chibiClassroom{
+      display:none!important;
+    }
   }
