@@ -1,12 +1,15 @@
 import "./styles.css";
 import { classData } from "../../data/classData";
+import { Routes, Route, Link } from "react-router-dom";
+
 
 
 function Header() {
     return (
         <header>
             <nav>
-                <a href="">Clase: {classData[0].classname}</a> <a href="">{classData[0].tools}</a>
+            <Link to="/">Clase: {classData[0].classname}</Link>
+            <Link to="/tools">{classData[0].tools}</Link>
             </nav>
         </header>
     )
