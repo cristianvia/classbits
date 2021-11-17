@@ -1,5 +1,4 @@
 import "./styles.css";
-import { classData } from "../../data/classData";
 import { Link } from "react-router-dom";
 
 
@@ -9,8 +8,8 @@ function Header() {
         <header>
             <nav>
             <Link to="/">Inici</Link>
-            <Link to="/game">Clase: {classData[0].classname}</Link>
-            <Link to="/tools">{classData[0].tools}</Link>
+            <Link to="/game">ClassBits</Link>
+            <Link to="/tools">Eines</Link>
             </nav>
         </header>
     )
