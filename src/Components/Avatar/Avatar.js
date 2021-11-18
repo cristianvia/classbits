@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import Tabs from "../Tab/Tabs";
 
+import { positiveData } from "../../data/positiveData";
+import { negativeData } from "../../data/negativeData";
+
+
 const modalStyles = {
     content: {
         top: '50%',
@@ -58,15 +62,12 @@ function Avatar(props) {
 
     return (
         <>
-            <li id={props.id}>
+            <li class="avatarPointer" id={props.id} onClick={openModal}>
                 <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id == 0) ? "" : count}</span>
                 <img src={props.img} width="250" alt="Avatar" />
                 <span class="name">{props.name}</span>
                 <span class="surname">{props.surname}</span>
-                <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
-                <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>
-            <button onClick={openModal}>Open Modal</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -77,16 +78,60 @@ function Avatar(props) {
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
 
                 <div class="container">
+                    <span class="counter">{(props.id == 0) ? "" : count}</span>
                     <img src={props.img} width="450" alt="Avatar" />
                     <Tabs>
-                        <div label="Gator">
-                            See ya later, <em>Alligator</em>!
+                        <div label="Positius">
+                            <ul>
+                                {positiveData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>
+                                            {data.name}
+                                            {data.emoji}
+                                            <span class="simpleCircle" style={{ backgroundColor: "green" }}> +1</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
                         </div>
-                        <div label="Croc">
-                            After 'while, <em>Crocodile</em>!
+                        <div label="Aspectes a millorar">
+                            <ul>
+                                {negativeData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>
+                                            {data.name}
+                                            {data.emoji}
+                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -1</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
                         </div>
-                        <div label="Sarcosuchus">
-                            Nothing to see here, this tab is <em>extinct</em>!
+                        <div label="Bescanvis">
+                            {/* 
+
+                        //La cantidad deberá determinarse por el valor que venga de data y pasárselo a la función
+                        Ejemplo: id:0, amount: 10,
+                        exchangeAll(props.amount)
+                        exchangeAll = () => {
+                            for (var i = 0; i < props.amount; i++) {
+                                Array.from(document.querySelectorAll(".subtract-count")).forEach(button => button.click())
+                                n += i;
+                                }
+                            
+                        }
+                        
+                        <ul>
+                                {exchangeData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>
+                                            {data.name}
+                                            {data.emoji}
+                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -1</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul> */}
                         </div>
                     </Tabs>
                 </div>
