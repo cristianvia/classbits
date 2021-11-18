@@ -98,3 +98,11 @@ body{
   font-weight: bold;
   font-size: 20px;
 }
+
+/* Behaviour loops */
+ul {
+	list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
