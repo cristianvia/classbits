@@ -99,10 +99,41 @@ body{
   font-size: 20px;
 }
 
+.simpleCircle{
+  border: 5px solid white;
+  height: 30px;
+  border-radius:20px;
+  width: 40px;
+  color:white;
+  font-weight: 500;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: orange;
+}
+
+.counter{
+  border: 5px solid;
+  height: 30px;
+  border-radius:20px;
+  width: 100px;
+  color:white;
+  font-weight: 500;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: orange;
+  text-align: center;
+}
+
 /* Behaviour loops */
 ul {
 	list-style: none;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.avatarPointer{
+  cursor:pointer;
 }

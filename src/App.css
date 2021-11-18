@@ -40,6 +40,7 @@ html{
 /* Tab navigation component */
 .tab-list {  border-bottom: 1px solid #ccc;
   padding-left: 0;
+  cursor:pointer;
 }
 
 .tab-list-item {
