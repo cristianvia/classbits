@@ -102,3 +102,43 @@ body{
       display:none!important;
     }
   }
+
+  .cta{
+    background-color: #7FDBFF;
+    height:300px;
+  }
+
+  .chibi_playing{
+    margin-top: 75px;
+    margin-left: -10px;
+    margin-bottom:-5px;
+    overflow:hidden;  
+  }
+
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  blockquote {
+    border-left: 10px solid#0073D9;
+    color:#0073D9;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 24px;
+    font-weight: 700;
+  }
+  blockquote:before {
+    color: #0073D9;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }

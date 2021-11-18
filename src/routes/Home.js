@@ -36,8 +36,17 @@ export default function Home() {
                 <div class="steps">2</div>
               </Link>
             </div>
-          </div>
+            <div class="chibi_playing">
+            <img src="../../images/chibi_playing.png" alt="chibi playing classbits" height="250"/>
+            </div>
+          </div>  
         </div>
+        <div class="container cta">
+            <div class="center">
+              <blockquote>Els jocs i la gamificació condueixen a alts nivells de compromís i motivació de l'alumne. - Karl Kapp -
+              </blockquote>
+          </div>
+          </div>
       </main>
     </>
   );
