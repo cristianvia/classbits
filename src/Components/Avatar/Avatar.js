@@ -135,7 +135,6 @@ function Avatar(props) {
                         </div>
                     </Tabs>
                 </div>
-                <button onClick={closeModal}>close</button>
             </Modal>
         </>
     );
