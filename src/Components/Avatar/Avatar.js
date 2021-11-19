@@ -67,8 +67,8 @@ function Avatar(props) {
                 <img src={props.img} width="250" alt="Avatar" />
                 <span class="name">{props.name}</span>
                 <span class="surname">{props.surname}</span>
-                <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
-                <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
+                <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>-</button>&nbsp;
+                <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points))) : setCount(count + (data.points))}>+</button>
             </li>
             <Modal
                 isOpen={modalIsOpen}
