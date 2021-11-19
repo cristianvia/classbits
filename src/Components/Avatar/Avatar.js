@@ -85,10 +85,10 @@ function Avatar(props) {
                             <ul>
                                 {positiveData.map((data) => {
                                     return (
-                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points))) : setCount(count + (data.points))}>
                                             {data.name}
                                             {data.emoji}
-                                            <span class="simpleCircle" style={{ backgroundColor: "green" }}> +1</span>
+                                    <span class="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
                                         </div>
                                     );
                                 })}
@@ -98,10 +98,10 @@ function Avatar(props) {
                             <ul>
                                 {negativeData.map((data) => {
                                     return (
-                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
                                             {data.name}
                                             {data.emoji}
-                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -1</span>
+                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -{data.points}</span>
                                         </div>
                                     );
                                 })}

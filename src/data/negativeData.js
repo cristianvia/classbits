@@ -2,47 +2,56 @@ export const negativeData = [
     {
         id: 0,
         name: "Faltar el respecte a un company",
-        emoji: ""
+        emoji: "",
+        points: 2,
     },
     {
         id: 1,
         name: "Molestar als companys",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
     {
         id: 2,
         name: "No estar atent",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
     {
         id: 3,
         name: "No fer els deures",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
     {
         id: 4,
         name: "No fer silenci",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
     {
         id: 5,
         name: "No treballar",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
     {
         id: 6,
         name: "Pegar-se amb un company",
-        emoji: ""
+        emoji: "",
+        points: 4,
     },
     {
         id: 7,
         name: "No fer cas del mestre/a",
-        emoji: ""
+        emoji: "",
+        points: 5,
     },
     {
         id: 8,
         name: "Balancejar-se a la cadira",
-        emoji: ""
+        emoji: "",
+        points: 1,
     },
 
 ];
