@@ -79,10 +79,11 @@ function Avatar(props) {
                 contentLabel="Modal"
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
-
                 <div class="container">
                     <span class="counter">{(props.id == 0) ? "" : count}</span>
                     <img src={props.img} class="avatarImage" alt="Avatar" />
+
+
                     <Tabs>
                         <div label="Positius">
                             <ul>
@@ -139,6 +140,8 @@ function Avatar(props) {
                         </div>
                     </Tabs>
                 </div>
+                <button id="closeModal" onClick={closeModal}>Tancar</button>
+
             </Modal>
         </>
     );
