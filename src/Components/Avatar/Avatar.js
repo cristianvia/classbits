@@ -90,8 +90,8 @@ function Avatar(props) {
                                 {positiveData.map((data) => {
                                     return (
                                         <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points))) : setCount(count + (data.points))}>
-                                            {data.name}
                                             {data.emoji}
+                                            {data.name}
                                     <span class="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
                                         </div>
                                     );

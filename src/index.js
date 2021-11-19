@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Home from './routes/Home';
 import Tools from './routes/Tools';
+import Groups from './routes/Groups';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="game" element={<App />} />
       <Route path="tools" element={<Tools />} />
+      <Route path="groups" element={<Groups />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,

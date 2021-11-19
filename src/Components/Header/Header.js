@@ -9,6 +9,7 @@ function Header() {
             <nav>
             <Link to="/">Inici</Link>
             <Link to="/game">ClassBits</Link>
+            <Link to="/groups">Grups</Link>
             <Link to="/tools">Eines</Link>
             </nav>
         </header>
