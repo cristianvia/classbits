@@ -67,6 +67,8 @@ function Avatar(props) {
                 <img src={props.img} width="250" alt="Avatar" />
                 <span class="name">{props.name}</span>
                 <span class="surname">{props.surname}</span>
+                <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
+                <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>
             <Modal
                 isOpen={modalIsOpen}
@@ -98,7 +100,7 @@ function Avatar(props) {
                             <ul>
                                 {negativeData.map((data) => {
                                     return (
-                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
+        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
                                             {data.name}
                                             {data.emoji}
                                             <span class="simpleCircle" style={{ backgroundColor: "red" }}> -{data.points}</span>
@@ -116,7 +118,7 @@ function Avatar(props) {
                         exchangeAll = () => {
                             for (var i = 0; i < props.amount; i++) {
                                 Array.from(document.querySelectorAll(".subtract-count")).forEach(button => button.click())
-                                n += i;
+                                i++= i;
                                 }
                             
                         }

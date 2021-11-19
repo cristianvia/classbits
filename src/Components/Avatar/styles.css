@@ -31,6 +31,7 @@ body{
   font-weight: bold;
   padding: 0 10px;
   height:25px;
+  display:none;
 }
 
 .subtract-count{
@@ -46,6 +47,7 @@ body{
   font-weight: bold;
   padding: 0 10px;
   height:25px;
+  display:none;
 }
 
 .circle {
