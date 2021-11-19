@@ -31,7 +31,7 @@ body{
   font-weight: bold;
   padding: 0 10px;
   height:25px;
-  display:none;
+  display:none; 
 }
 
 .subtract-count{
@@ -138,4 +138,8 @@ ul {
 
 .avatarPointer{
   cursor:pointer;
+}
+
+.avatarImage{
+  width:450px;
 }

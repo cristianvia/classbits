@@ -170,7 +170,7 @@ export const avatarData = [
     {
         id: 28,
         name: "Yago",
-        surname: "Vidal",
+        surname: "Vila",
         img: "../../images/chibis/28.png"
     },
 ];

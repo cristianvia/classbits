@@ -5,6 +5,7 @@ import Tabs from "../Tab/Tabs";
 
 import { positiveData } from "../../data/positiveData";
 import { negativeData } from "../../data/negativeData";
+import { exchangeData } from "../../data/exchangeData";
 
 
 const modalStyles = {
@@ -81,7 +82,7 @@ function Avatar(props) {
 
                 <div class="container">
                     <span class="counter">{(props.id == 0) ? "" : count}</span>
-                    <img src={props.img} width="450" alt="Avatar" />
+                    <img src={props.img} class="avatarImage" alt="Avatar" />
                     <Tabs>
                         <div label="Positius">
                             <ul>
@@ -110,6 +111,17 @@ function Avatar(props) {
                             </ul>
                         </div>
                         <div label="Bescanvis">
+                        <ul>
+                                {exchangeData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
+                                            {data.name}
+                                            {data.emoji}
+                                            <span class="simpleCircle" style={{ backgroundColor: "blue" }}> -{data.points}</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
                             {/* 
 
                         //La cantidad deberá determinarse por el valor que venga de data y pasárselo a la función
@@ -123,17 +135,7 @@ function Avatar(props) {
                             
                         }
                         
-                        <ul>
-                                {exchangeData.map((data) => {
-                                    return (
-                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>
-                                            {data.name}
-                                            {data.emoji}
-                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -1</span>
-                                        </div>
-                                    );
-                                })}
-                            </ul> */}
+                         */}
                         </div>
                     </Tabs>
                 </div>
