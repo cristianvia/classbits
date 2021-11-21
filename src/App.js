@@ -3,7 +3,8 @@ import './App.css';
 import Avatar from './Components/Avatar/Avatar';
 import Header from './Components/Header/Header';
 
-import { avatarData } from "./data/avatarData";
+import avatarData from "./data/avatarData.json";
+
 
 function App(props) {
 
