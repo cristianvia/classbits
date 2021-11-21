@@ -144,6 +144,17 @@ ul {
   width:450px;
 }
 
-.emoji{
-  font-size: 40px;
+.closeButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  width: 80px;
+  cursor: pointer;
+  margin-top:-20px!important;
+  margin: 5px;
 }

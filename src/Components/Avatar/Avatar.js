@@ -116,7 +116,7 @@ function Avatar(props) {
                                 {exchangeData.map((data) => {
                                     return (
                                         <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
-                                            {data.name}
+                                            {data.name}&nbsp;
                                             {data.emoji}
                                             <span class="simpleCircle" style={{ backgroundColor: "blue" }}> -{data.points}</span>
                                         </div>
@@ -140,7 +140,7 @@ function Avatar(props) {
                         </div>
                     </Tabs>
                 </div>
-                <button id="closeModal" onClick={closeModal}>Tancar</button>
+                <button class="closeButton" onClick={closeModal}>Tancar</button>
 
             </Modal>
         </>
