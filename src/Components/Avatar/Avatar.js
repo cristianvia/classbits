@@ -71,10 +71,33 @@ function Avatar(props) {
     const fail = () => {
         audioFail.play()
     }
+
+    //Count the total amount of points stored in localstorage
+    const [totalPoints, setTotalPoints] = useState(0);
+    var totalSumandos = 0;
+
+    const checkTotal = () => {
+        if(localStorage.length > 0){
+            const sumandos = []
+            for (let i=0, len=localStorage.length; i<len; i++){
+                let key = localStorage.key(i); 
+                let val = parseInt(localStorage.getItem(key));
+                sumandos.push(val)
+            }
+            totalSumandos = sumandos.reduce((a, b) => a + b, 0);
+            setTotalPoints(totalSumandos);
+            console.log(totalPoints)
+        }
+    };
+
+    useEffect(() => {
+        checkTotal()
+    })
+
     return (
         <>
             <li class="avatarPointer" id={props.id} onClick={openModal}>
-                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id == 0) ? "" : count}</span>
+                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id == 0) ? totalPoints : count}</span>
                 <img src={props.img} width="250" alt="Avatar" />
                 <span class="name">{props.name}</span>
                 <span class="surname">{props.surname}</span>
@@ -90,7 +113,7 @@ function Avatar(props) {
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
                 <div class="container">
-                    <span class="counter">{(props.id == 0) ? "" : count}</span>
+                    <span class="counter">{(props.id == 0) ? totalPoints : count}</span>
                     <img src={props.img} class="avatarImage" alt="Avatar" />
 
 
