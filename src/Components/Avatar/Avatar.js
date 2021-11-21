@@ -61,6 +61,16 @@ function Avatar(props) {
         Array.from(document.querySelectorAll(".add-count")).forEach(button => button.click())
     }
 
+    //Add sounds when points interaction
+    let audioCorrect = new Audio("./audio/correct.wav")
+    let audioFail = new Audio("./audio/fail.mp3")
+
+    const correct = () => {
+        audioCorrect.play()
+    }
+    const fail = () => {
+        audioFail.play()
+    }
     return (
         <>
             <li class="avatarPointer" id={props.id} onClick={openModal}>
@@ -89,10 +99,10 @@ function Avatar(props) {
                             <ul>
                                 {positiveData.map((data) => {
                                     return (
-                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points))) : setCount(count + (data.points))}>
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points),correct())) : (setCount(count + (data.points)),correct())}>
                                             {data.emoji}
                                             {data.name}
-                                    <span class="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
+                                            <span class="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
                                         </div>
                                     );
                                 })}
@@ -102,7 +112,7 @@ function Avatar(props) {
                             <ul>
                                 {negativeData.map((data) => {
                                     return (
-        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points)), fail()) : (setCount(count - (data.points)), fail())}>
                                             {data.name}
                                             {data.emoji}
                                             <span class="simpleCircle" style={{ backgroundColor: "red" }}> -{data.points}</span>
@@ -112,7 +122,7 @@ function Avatar(props) {
                             </ul>
                         </div>
                         <div label="Bescanvis">
-                        <ul>
+                            <ul>
                                 {exchangeData.map((data) => {
                                     return (
                                         <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
