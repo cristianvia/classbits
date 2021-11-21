@@ -28,6 +28,24 @@
         "name": "Escollir què farem a classe",
         "emoji": "",
         "points": 100
+    },
+    {
+        "id": 6,
+        "name": "Anar al lavabo",
+        "emoji": "",
+        "points": 1
+    },
+    {
+        "id": 7,
+        "name": "",
+        "emoji": "Mirar vídeos mentre esmorzem",
+        "points": 10
+    },
+    {
+        "id": 8,
+        "name": "Anar el primer a la fila",
+        "emoji": "",
+        "points": 5
     }
     
 ]

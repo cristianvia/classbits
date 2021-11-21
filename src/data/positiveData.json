@@ -1,11 +1,5 @@
 [
     {
-        "id": 0,
-        "name": "Ajuda els altres",
-        "emoji": "🤝",
-        "points": 1
-    },
-    {
         "id": 1,
         "name": "Endreça i ajuda a endreçar",
         "emoji": "📦",

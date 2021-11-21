@@ -31,24 +31,18 @@
     },
     {
         "id": 5,
-        "name": "No treballar",
-        "emoji": "",
-        "points": 1
-    },
-    {
-        "id": 6,
         "name": "Pegar-se amb un company",
         "emoji": "",
         "points": 4
     },
     {
-        "id": 7,
+        "id": 6,
         "name": "No fer cas del mestre/a",
         "emoji": "",
         "points": 5
     },
     {
-        "id": 8,
+        "id": 7,
         "name": "Balancejar-se a la cadira",
         "emoji": "",
         "points": 1
