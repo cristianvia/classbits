@@ -2,49 +2,49 @@
     {
         "id": 1,
         "name": "Triar una cançó",
-        "emoji": "",
+        "emoji": "🎶",
         "points": 1
     },
     {
         "id": 2,
         "name": "Canvi de lloc durant un dia",
-        "emoji": "",
+        "emoji": "🔄",
         "points": 15
     },
     {
         "id": 3,
         "name": "Asseure a la cadira del professor",
-        "emoji": "",
+        "emoji": "💺",
         "points": 30
     },
     {
         "id": 4,
         "name": "Corregir a la pissarra",
-        "emoji": "",
+        "emoji": "📝",
         "points": 1
     },
     {
         "id": 5,
         "name": "Escollir què farem a classe",
-        "emoji": "",
+        "emoji": "🪄",
         "points": 100
     },
     {
         "id": 6,
         "name": "Anar al lavabo",
-        "emoji": "",
+        "emoji": "🚾",
         "points": 1
     },
     {
         "id": 7,
-        "name": "",
-        "emoji": "Mirar vídeos mentre esmorzem",
+        "name": "Mirar vídeos mentre esmorzem",
+        "emoji": "🎬",
         "points": 10
     },
     {
         "id": 8,
         "name": "Anar el primer a la fila",
-        "emoji": "",
+        "emoji": "🥇",
         "points": 5
     }
     
