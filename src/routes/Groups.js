@@ -1,6 +1,18 @@
 import Header from '../Components/Header/Header';
+import avatarData from "../data/avatarData.json";
 
 export default function Groups() {
+var arrayChibits = [];
+
+  const getArrayChibits = () => {
+    avatarData.map((data) => {
+      arrayChibits.push(data.name);
+    })
+  }
+  getArrayChibits();
+  console.log(arrayChibits)
+
+
     return (
       <>
       <Header />
