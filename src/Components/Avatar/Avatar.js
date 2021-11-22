@@ -103,7 +103,51 @@ function Avatar(props) {
                 <button class="subtract-count" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
                 <button class="add-count" onClick={() => (props.id == 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>
-            <Modal
+            {(props.id == 0) ? <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={modalStyles}
+                contentLabel="Modal"
+            >
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
+                <div class="container">
+                    <span class="counter">{(props.id == 0) ? totalPoints : count}</span>
+                    <img src={props.img} class="avatarImage" alt="Avatar" />
+
+
+                    <Tabs>
+                        <div label="Positius">
+                            <ul>
+                                {positiveData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (addAll(), setCount(count + (data.points),correct())) : (setCount(count + (data.points)),correct())}>
+                                            {data.emoji}
+                                            {data.name}
+                                            <span class="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                        <div label="Aspectes a millorar">
+                            <ul>
+                                {negativeData.map((data) => {
+                                    return (
+                                        <div class="cardDescription" onClick={() => (props.id == 0) ? (substractAll(), setCount(count - (data.points)), fail()) : (setCount(count - (data.points)), fail())}>
+                                            {data.name}
+                                            {data.emoji}
+                                            <span class="simpleCircle" style={{ backgroundColor: "red" }}> -{data.points}</span>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    </Tabs>
+                </div>
+                <button class="closeButton" onClick={closeModal}>Tancar</button>
+
+            </Modal> : <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
@@ -174,7 +218,7 @@ function Avatar(props) {
                 </div>
                 <button class="closeButton" onClick={closeModal}>Tancar</button>
 
-            </Modal>
+            </Modal>}
         </>
     );
 }
