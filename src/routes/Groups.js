@@ -10,7 +10,6 @@ export default function Groups() {
   const getArrayChibits = () => {
     //Must ensure everytime it's called starts empty
     arrayChibits = [];
-    stringChibits = "";
     avatarData.map((data) => {
       arrayChibits.push(data.name);
     })
