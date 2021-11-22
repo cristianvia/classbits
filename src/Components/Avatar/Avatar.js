@@ -86,7 +86,6 @@ function Avatar(props) {
             }
             totalSumandos = sumandos.reduce((a, b) => a + b, 0);
             setTotalPoints(totalSumandos);
-            console.log(totalPoints)
         }
     };
 
