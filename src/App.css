@@ -59,8 +59,8 @@ html{
   /* Mobile responsive Modals */
   @media (max-width: 1400px) {
     .avatarImage{
-      width:150px;
-      height:150px;
+      width:250px!important;
+      height:250px;
     }
 
     .cardDescription{
