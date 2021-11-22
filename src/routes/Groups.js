@@ -4,48 +4,64 @@ import './GroupStyles.css';
 
 export default function Groups() {
 
-  function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-  }
-
   var arrayChibits = [];
   var stringChibits = "";
 
   const getArrayChibits = () => {
+    //Must ensure everytime it's called starts empty
+    arrayChibits = [];
+    stringChibits = "";
     avatarData.map((data) => {
       arrayChibits.push(data.name);
     })
     //shift() = removes first element of array (the whole class)
     arrayChibits.shift();
-    shuffle(arrayChibits);
-    var iterator = arrayChibits.values();
+    return arrayChibits;
+  }
 
-    for (let arrChib of iterator) {
-      stringChibits = stringChibits.concat(arrChib, ",")
+  const createGroups = () => {
+    var number = document.getElementById("number").value;
+    var name_list = getArrayChibits();
+    var group = [];
+
+    for (var i = 0; i < number; i++) {
+      group.push([]);
     }
-    //substring removes last element of the string, the last unwilled ","
-    stringChibits = stringChibits.substring(0, stringChibits.length - 1);
-    console.log(stringChibits);
+
+    var size = name_list.length;
+    var groupID = 0;
+    for (var i = 0; i < size; i++) {
+      var rand = Math.floor(Math.random() * name_list.length);
+
+      group[groupID].push(name_list[rand]);
+      name_list.splice(rand, 1);
+
+      groupID++;
+      if (groupID >= number) {
+        groupID = 0;
+      }
+    }
+
+    var htmlresult = "";
+
+    for (var i = 0; i < group.length; i++) {
+      htmlresult += "<div class='avatarGroups'><div style='text-align:center;'><strong> Grupo " + (i + 1) + "</strong></div><ul>";
+      for (var j = 0; j < group[i].length; j++) {
+        htmlresult += "<li>" + group[i][j] + "</li>";
+      }
+      htmlresult += "</ul></div>";
+    }
+
+    document.getElementById("result").innerHTML = htmlresult;
   }
 
 
 
-  getArrayChibits();
-  console.log(arrayChibits);
+
+
+
+
+
 
 
 
@@ -55,7 +71,8 @@ export default function Groups() {
       <div style={{ padding: 50 }}>
         <div class="container">
           <p><span id="cantidadGrupos">Cantidad de grupos: </span><input id="number"></input></p>
-          <button class="createGroupsButton" onclick="go()"> Crear grupos </button>
+          <button class="createGroupsButton" onClick={createGroups}> Crear grupos </button>
+          <div id="result"></div>
         </div>
       </div>
     </>
