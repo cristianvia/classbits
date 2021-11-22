@@ -57,18 +57,37 @@
 }
 
 #result {
+  display: flex;
   border-radius: 3px;
   margin-top: 10px;
+  margin-left: 15px;
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 300px;
+  width: 500px;
+  text-align:center;
+  flex-wrap:wrap;
+  align-content: flex-start;
+  height: 100px;
+  width:100%;
 }
 
-ul{
-display: block;
+.avatarGroups ul{
+  display:block;
+  padding:20px;
 }
 
 .avatarGroups{
-  display: flex;
+  padding:10px;
+  margin:10px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  background-color: #F8E57C;
+  background-image: linear-gradient(to bottom right, #f8e072, #f5f593);
+}
+
+.avatarGroups:hover {
+    right: 5px; top: 75%; bottom: 2%;
+    width: 25%;
+    box-shadow: -7px 4px 15px rgba(0,0,0,.5);
+    transform: rotate(1deg);
 }
