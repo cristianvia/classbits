@@ -11,7 +11,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <div class="apps">
+      <div className="apps">
         <ul>
           {avatarData.map((data) => {
             return (

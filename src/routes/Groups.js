@@ -5,7 +5,6 @@ import './GroupStyles.css';
 export default function Groups() {
 
   var arrayChibits = [];
-  var stringChibits = "";
 
   const getArrayChibits = () => {
     //Must ensure everytime it's called starts empty
