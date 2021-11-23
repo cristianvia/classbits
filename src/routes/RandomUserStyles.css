@@ -1,0 +1,9 @@
+.randAvatar{
+    display: flex;
+    justify-content: center;
+}
+
+.avatarPointer{
+    list-style-type: none;
+}
+
