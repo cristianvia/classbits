@@ -33,11 +33,11 @@
   @media only screen and (max-width: 1400px) {
     .containerFraseBonita {
     margin-top: 40px;
-    width: 400px;
+    width: 300px;
   }
   .pergaImg{
-    width:900px!important;
-    margin-left: 150px;
+    width:750px!important;
+    margin-left: 220px;
 }
 
 #fraseBonita {
