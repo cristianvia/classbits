@@ -1,4 +1,6 @@
 import Header from '../Components/Header/Header';
+import { Link } from "react-router-dom";
+
 
 export default function Tools() {
     return (
@@ -13,7 +15,7 @@ export default function Tools() {
                 Frase diària
             </div>
             <div class="cardDescription">
-                Pergamí del destí
+            <Link to="/pergamino">Pergamí del destí</Link>
             </div>
           </div>
         </div>
