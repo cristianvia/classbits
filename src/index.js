@@ -7,6 +7,7 @@ import Home from './routes/Home';
 import Tools from './routes/Tools';
 import Groups from './routes/Groups';
 import Pergamino from './routes/Pergamino';
+import RandomUser from './routes/RandomUser';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Route path="tools" element={<Tools />} />
       <Route path="groups" element={<Groups />} />
       <Route path="pergamino" element={<Pergamino />} />
+      <Route path="randomUser" element={<RandomUser />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,
