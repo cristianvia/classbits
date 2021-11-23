@@ -62,8 +62,8 @@ export default function Groups() {
       <div style={{ padding: 50 }}>
         <div class="container">
           <div>
-          <p><span id="cantidadGrupos">Cantidad de grupos: </span><input id="number" size="2"></input></p>
-          <button class="createGroupsButton" onClick={createGroups}> Crear grupos </button>
+          <p><span id="cantidadGrupos">Quantitat de grups: </span><input id="number" size="2"></input></p>
+          <button class="createGroupsButton" onClick={createGroups}> Crear grups </button>
           </div>
           
           <div id="result"></div>
