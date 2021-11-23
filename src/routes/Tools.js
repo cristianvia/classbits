@@ -23,6 +23,18 @@ export default function Tools() {
           </Link>
            <figcaption class="textCaption">Pergamí del destí</figcaption>
           </div>
+          <div>
+          <Link to="/groups">
+          <img src="../../images/tools/groups.png" alt="Generador de grups" class="toolsCircle" />
+          </Link>
+           <figcaption class="textCaption">Generador de grups</figcaption>
+          </div>
+          <div>
+          <Link to="/randomUser">
+          <img src="../../images/tools/random.png" alt="Usuari aleatori" class="toolsCircle" />
+          </Link>
+           <figcaption class="textCaption">Usuari aleatori</figcaption>
+          </div>
         </div>
       </div>
     </>
