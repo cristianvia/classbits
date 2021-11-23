@@ -6,6 +6,7 @@ import App from './App';
 import Home from './routes/Home';
 import Tools from './routes/Tools';
 import Groups from './routes/Groups';
+import Pergamino from './routes/Pergamino';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Route path="game" element={<App />} />
       <Route path="tools" element={<Tools />} />
       <Route path="groups" element={<Groups />} />
+      <Route path="pergamino" element={<Pergamino />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,
