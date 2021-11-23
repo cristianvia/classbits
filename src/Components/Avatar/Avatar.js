@@ -64,12 +64,17 @@ function Avatar(props) {
     //Add sounds when points interaction
     let audioCorrect = new Audio("./audio/correct.wav")
     let audioFail = new Audio("./audio/fail.mp3")
+    let audioExchange = new Audio("./audio/exchange.wav")
 
     const correct = () => {
         audioCorrect.play()
     }
     const fail = () => {
         audioFail.play()
+    }
+
+    const exchange = () => {
+        audioExchange.play()
     }
 
     //Count the total amount of points stored in localstorage
@@ -191,7 +196,7 @@ function Avatar(props) {
                             <ul>
                                 {exchangeData.map((data) => {
                                     return (
-                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - (data.points))) : setCount(count - (data.points))}>
+                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - (data.points), exchange())) : setCount(count - (data.points),exchange())}>
                                             {data.emoji}&nbsp;
                                             {data.name}
                                             <span className="simpleCircle" style={{ backgroundColor: "blue" }}> -{data.points}</span>
