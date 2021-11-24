@@ -33,7 +33,7 @@ export default function DailySentence() {
                     <button class="createGroupsButton" type="button" onClick={getSentence}>Dime una frase bonita</button>
                     <div className="sentenceContainer">
                         <img src="/images/chibi_yoda.png" alt="yoda" width="350px" height="300px"/>
-                        <div class="fraseBonita-container">
+                        <div class="fraseBonitaContainer">
                             <h3 id="fraseBonita"></h3>
                         </div>
                     </div>

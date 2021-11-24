@@ -5,7 +5,7 @@
   }
 
   
-  .fraseBonita-container {
+  .fraseBonitaContainer {
     margin-top:25px;
     width: 100%;
     padding: 20px;
@@ -15,7 +15,7 @@
     position: relative;
   }
   
-  .fraseBonita-container:after {
+  .fraseBonitaContainer:after {
     content: '';
     position: absolute;
     display: block;
@@ -28,13 +28,6 @@
     left: -20px;
     margin-top: -20px;
 }
-  
-  @media only screen and (max-width: 600px) {
-    .containerFraseBonita {
-    margin-top: 40px;
-    width: 400px;
-  }
-  }
 
   .sentenceContainer{
       display:flex;
