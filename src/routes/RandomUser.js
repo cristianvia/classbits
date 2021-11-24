@@ -25,7 +25,7 @@ const [chosenAvatar, setChosenAvatar] = useState([""]);
             <Header />
             <main>
                 <div style={{ padding: 70 }}>
-                    <button class="createGroupsButton" onClick={changeState}> Usuari aleatori </button>
+                    <button class="createRandomButton" onClick={changeState}> Usuari aleatori </button>
                             <div class="randAvatar">
                                 <Avatar
                                     id={randomAvatar.id}
