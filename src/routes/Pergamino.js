@@ -4,29 +4,17 @@ import pergaminoData from "../data/pergaminoData.json"
 
 export default function Pergamino() {
   var myArray = pergaminoData;
-     function outPutOptions(arr) {
-       var output = '';
-       var length = arr.length;
-       for (var x = 0; x < length; x++) {
-         if(length - 1 === x) {
-                 output += arr[x] + '';
-            } else {
-              output += arr[x] + ', ';
-            }
-       }
-       return output;
-     }
       
       function getRandom(){
         return myArray[Math.floor(Math.random()*myArray.length)];        
       }
 
       const showPergamino = () => {
-        document.getElementById('fraseBonita').innerHTML = getRandom()
+        document.getElementById('frasePergamino').innerHTML = getRandom()
       }
 
       const deletePergamino = () => {
-        document.getElementById('fraseBonita').innerHTML = ''
+        document.getElementById('frasePergamino').innerHTML = ''
       }
   return (
     <>
@@ -40,7 +28,7 @@ export default function Pergamino() {
 
           <div class ="containerFraseBonita">
           <div class ="fraseBonita-container">
-          <h3 id="fraseBonita"></h3>
+          <h3 id="frasePergamino"></h3>
           </div>
           <div class ="enter-options">
           </div>
