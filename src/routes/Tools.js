@@ -16,8 +16,8 @@ export default function Tools() {
           <div>
             <Link to="/dailySentence">
               <img src="../../images/tools/frase_diaria.png" alt="Frase diaria" class="toolsCircle" />
-              <figcaption class="textCaption">Frase diària</figcaption>
             </Link>
+              <figcaption class="textCaption">Frase diària</figcaption>
           </div>
           <div>
             <Link to="/pergamino">
@@ -35,7 +35,7 @@ export default function Tools() {
             <Link to="/randomUser">
               <img src="../../images/tools/random.png" alt="Usuari aleatori" class="toolsCircle" />
             </Link>
-            <figcaption class="textCaption">Usuari aleatori</figcaption>
+            <figcaption class="textCaption">ChiBit aleatori</figcaption>
           </div>
         </div>
       </div>
