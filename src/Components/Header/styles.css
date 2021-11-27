@@ -4,7 +4,6 @@ header {
 	background-color: #00AFF0;
 	text-align: center;
 	position: relative;
-	position: fixed;
 	top: 0;
 	overflow: hidden;
 }
