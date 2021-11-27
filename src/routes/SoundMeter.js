@@ -4,8 +4,9 @@ import { useEffect } from 'react';
 
 
 export default function SoundMeter() {
-    window.onload = function () {
-        "use strict";
+    
+    useEffect( () => {
+    "use strict";
         var paths = document.getElementsByTagName('path');
         var visualizer = document.getElementById('visualizer');
         var mask = visualizer.getElementById('mask');
@@ -48,11 +49,12 @@ export default function SoundMeter() {
                         paths[i].setAttribute('d', 'M ' + (i) + ',255 l 0,-' + adjustedLength);
                     }
                 }
-                else {
-                    for (var i = 0; i < 255; i++) {
-                        paths[i].setAttribute('d', 'M ' + (i) + ',255 l 0,-' + 0);
-                    }
-                }
+                //It must be commented, otherwise it starts an eternal hell loop of setAttribute to undefined whenever we change window
+                // else {
+                //     for (var i = 0; i < 255; i++) {
+                //         paths[i].setAttribute('d', 'M ' + (i) + ',255 l 0,-' + 0);
+                //     }
+                // }
             }
             var showVolume = function () {
                 setTimeout(showVolume, 500);
@@ -115,7 +117,10 @@ export default function SoundMeter() {
                 this.className = "red-button";
             }
         };
-    };
+        return( () => {
+            start = false;
+        })
+    },[])
 
     return (
         <>
