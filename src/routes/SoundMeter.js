@@ -5,86 +5,145 @@ import { useEffect } from 'react';
 
 export default function SoundMeter() {
     window.onload = function () {
+        "use strict";
+        var paths = document.getElementsByTagName('path');
+        var visualizer = document.getElementById('visualizer');
+        var mask = visualizer.getElementById('mask');
+        var h = document.getElementsByTagName('h1')[0];
+        var hSub = document.getElementsByTagName('h1')[1];
+        var AudioContext;
+        var audioContent;
+        var start = false;
+        var permission = false;
+        var path;
+        var seconds = 0;
+        var loud_volume_threshold = 30;
 
-        navigator.mediaDevices
-            .getUserMedia({ audio: true, video: false })
-            .then(function (stream) {
-                var context = new AudioContext();
-                var gainNode = context.createGain();
+        var soundAllowed = function (stream) {
+            permission = true;
+            var audioStream = audioContent.createMediaStreamSource(stream);
+            var analyser = audioContent.createAnalyser();
+            var fftSize = 1024;
 
-                var src = context.createMediaStreamSource(stream);
-                src.connect(gainNode);
-                gainNode.connect(context.destination);
+            analyser.fftSize = fftSize;
+            audioStream.connect(analyser);
 
-                gainNode.gain.setTargetAtTime(0, context.currentTime, 0);
+            var bufferLength = analyser.frequencyBinCount;
+            var frequencyArray = new Uint8Array(bufferLength);
 
-                var analyser = context.createAnalyser();
+            visualizer.setAttribute('viewBox', '0 0 255 255');
 
-                var canvas = document.getElementById("canvas");
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                var ctx = canvas.getContext("2d");
-
-                src.connect(analyser);
-                gainNode.connect(analyser);
-
-                var WIDTH = canvas.width;
-                var HEIGHT = canvas.height;
-
-                if (WIDTH <= 480) analyser.fftSize = 64;
-                if (WIDTH > 480 && WIDTH < 768) analyser.fftSize = 128;
-                if (WIDTH >= 768) analyser.fftSize = 256;
-
-
-                var bufferLength = analyser.frequencyBinCount;
-
-                var dataArray = new Uint8Array(bufferLength);
-
-
-                var barWidth = WIDTH / bufferLength * 2.5;
-                var barHeight;
-                var x = 0;
-
-                function renderFrame() {
-                    requestAnimationFrame(renderFrame);
-
-                    x = 0;
-
-                    analyser.getByteFrequencyData(dataArray);
-
-                    ctx.fillStyle = "lightgrey";
-                    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-                    for (var i = 0; i < bufferLength; i++) {
-                        barHeight = dataArray[i];
-
-                        var r = barHeight + 25 * (i / bufferLength);
-                        var g = 250 * (i / bufferLength);
-                        var b = 50;
-
-                        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                        ctx.fillRect(x, HEIGHT - barHeight
-                            , barWidth, barHeight);
-
-                        x += barWidth + 1;
+            for (var i = 0; i < 255; i++) {
+                path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('stroke-dasharray', '4,1');
+                mask.appendChild(path);
+            }
+            var doDraw = function () {
+                requestAnimationFrame(doDraw);
+                if (start) {
+                    analyser.getByteFrequencyData(frequencyArray);
+                    var adjustedLength;
+                    for (var i = 0; i < 255; i++) {
+                        adjustedLength = Math.floor(frequencyArray[i]) - (Math.floor(frequencyArray[i]) % 5);
+                        paths[i].setAttribute('d', 'M ' + (i) + ',255 l 0,-' + adjustedLength);
                     }
                 }
+                else {
+                    for (var i = 0; i < 255; i++) {
+                        paths[i].setAttribute('d', 'M ' + (i) + ',255 l 0,-' + 0);
+                    }
+                }
+            }
+            var showVolume = function () {
+                setTimeout(showVolume, 500);
+                if (start) {
+                    analyser.getByteFrequencyData(frequencyArray);
+                    var total = 0
+                    for (var i = 0; i < 255; i++) {
+                        var x = frequencyArray[i];
+                        total += x * x;
+                    }
+                    var rms = Math.sqrt(total / bufferLength);
+                    var db = 20 * (Math.log(rms) / Math.log(10));
+                    db = Math.max(db, 0); // sanity check
+                    h.innerHTML = Math.floor(db) + " dB";
 
-                renderFrame();
-            })
-            .catch(function (err) {
-                console.log("error:");
-                console.log(err);
-            });
+                    if (db >= loud_volume_threshold) {
+                        seconds += 0.5;
+                        if (seconds >= 5) {
+                            hSub.innerHTML = "Has estat en un ambient amb soroll durant<span> " + Math.floor(seconds) + " </span>seconds.";
+                        }
+                    }
+                    else {
+                        seconds = 0;
+                        hSub.innerHTML = "";
+                    }
+                }
+                else {
+                    h.innerHTML = "";
+                    hSub.innerHTML = "";
+                }
+            }
+
+            doDraw();
+            showVolume();
+        }
+
+        var soundNotAllowed = function (error) {
+            h.innerHTML = "Has de donar accès al microfon";
+            console.log(error);
+        }
+
+
+        document.getElementById('buttonStart').onclick = function () {
+            if (start) {
+                start = false;
+                this.innerHTML = "Començar a mesurar";
+                this.className = "green-button";
+            }
+            else {
+                if (!permission) {
+                    navigator.mediaDevices.getUserMedia({ audio: true })
+                        .then(soundAllowed)
+                        .catch(soundNotAllowed);
+
+                    AudioContext = window.AudioContext || window.webkitAudioContext;
+                    audioContent = new AudioContext();
+                }
+                start = true;
+                this.innerHTML = "Parar el medidor";
+                this.className = "red-button";
+            }
+        };
     };
 
     return (
         <>
             <Header />
             <main>
-                <div id="content">
-                    <canvas id="canvas"></canvas>
-                </div>
+
+                <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <mask id="mask">
+                            <g id="maskGroup"></g>
+                        </mask>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" class="stop0" />
+                            <stop offset="40%" class="stop40" />
+                            <stop offset="60%" class="stop65" />
+                            <stop offset="85%" class="stop85" />
+                            <stop offset="100%" class="stop100" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
+                </svg>
+
+                <h1 class="main-text" id="#micro1">Permet l'ús del microfon</h1>
+
+                <h1 class="sub-text" id="#micro2"></h1>
+
+                <div class="button-container"><button id="buttonStart" class="green-button">Medidor de so</button></div>
+
             </main>
         </>
     );
