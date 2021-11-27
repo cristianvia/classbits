@@ -1,8 +1,4 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+.microphoneContainer {
     background-color:#222;
 }
 svg {
@@ -13,12 +9,12 @@ svg {
     margin: 0;
     position:absolute;
 }
-h1 {
+h6 {
     width: 100%;
     font-family: sans-serif;
     position:absolute;
     text-align:center;
-    color:white;
+    color:black;
 }
 .main-text {
     font-size: 40px;

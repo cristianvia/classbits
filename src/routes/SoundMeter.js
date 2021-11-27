@@ -9,8 +9,8 @@ export default function SoundMeter() {
         var paths = document.getElementsByTagName('path');
         var visualizer = document.getElementById('visualizer');
         var mask = visualizer.getElementById('mask');
-        var h = document.getElementsByTagName('h1')[0];
-        var hSub = document.getElementsByTagName('h1')[1];
+        var h = document.getElementsByTagName('h6')[0];
+        var hSub = document.getElementsByTagName('h6')[1];
         var AudioContext;
         var audioContent;
         var start = false;
@@ -120,7 +120,7 @@ export default function SoundMeter() {
     return (
         <>
             <Header />
-            <main>
+            <div class="microphoneContainer">
 
                 <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
                     <defs>
@@ -138,13 +138,13 @@ export default function SoundMeter() {
                     <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
                 </svg>
 
-                <h1 class="main-text" id="#micro1">Permet l'ús del microfon</h1>
+                <h6 class="main-text" id="#micro1">Permet l'ús del microfon</h6>
 
-                <h1 class="sub-text" id="#micro2"></h1>
+                <h6 class="sub-text" id="#micro2"></h6>
 
                 <div class="button-container"><button id="buttonStart" class="green-button">Medidor de so</button></div>
 
-            </main>
+            </div>
         </>
     );
 }
