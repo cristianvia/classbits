@@ -8,6 +8,7 @@ import Tools from './routes/Tools';
 import Groups from './routes/Groups';
 import Pergamino from './routes/Pergamino';
 import RandomUser from './routes/RandomUser';
+import SoundMeter from "./routes/SoundMeter"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="groups" element={<Groups />} />
       <Route path="pergamino" element={<Pergamino />} />
       <Route path="randomUser" element={<RandomUser />} />
+      <Route path="soundMeter" element={<SoundMeter />} />
       <Route path="dailySentence" element={<DailySentence />} />
     </Routes>
     </BrowserRouter>

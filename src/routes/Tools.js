@@ -9,10 +9,12 @@ export default function Tools() {
       <Header />
       <div style={{ padding: 50 }}>
         <div class="container toolsContainer">
-          {/* <div>
+          <div>
+            <Link to="/soundMeter">
             <img src="../../images/tools/semaforo.png" alt="Medidor de ruido" class="toolsCircle" />
+            </Link>
             <figcaption class="textCaption">Medidor de soroll</figcaption>
-          </div> */}
+          </div>
           <div>
             <Link to="/dailySentence">
               <img src="../../images/tools/frase_diaria.png" alt="Frase diaria" class="toolsCircle" />
