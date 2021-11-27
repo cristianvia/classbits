@@ -18,7 +18,7 @@ export default function DailySentence() {
             <Header />
             <main>
                 <div style={{ padding: 70 }}>
-                    <button class="createGroupsButton" type="button" onClick={getSentence}>Genera una frase bonica</button>
+                    <button class="sentenceButton" type="button" onClick={getSentence}>Genera una frase bonica</button>
                     <div className="sentenceContainer">
                         <img src="/images/chibi_yoda.png" alt="yoda" width="350px" height="300px"/>
                         <div class="fraseBonitaContainer">

@@ -6,19 +6,62 @@
 .avatarPointer{
     list-style-type: none;
 }
-.createRandomButton{
+
+.createRandomButton {
     cursor: pointer;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: Marvel;
     font-size: 14pt;
     width: 200px;
-    height: 45px;
+    height: 85px;
     position: relative;
     border: solid #777 2px;
     color: white;
+    z-index: 1;
     transition: all 0.5s ease-in-out;
     border-radius: 5px;
     overflow: hidden;
     background-color: rgb(11, 0, 112);
+  }
+  
+.createRandomButton:before {
+    content: "";
+    position: absolute;
+    background-color: rgb(19, 153, 214);
+    width: 110%;
+    height: 300px;
+    border-radius: 50%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+.createRandomButton:hover:before {
+    width: 0%;
+    height: 0%;
+  }
+  
+.createRandomButton:hover {
+    color: #f1f1f1;
+    border-color: rgb(11, 0, 112);
+  }
+  
+.createRandomButton:active:before {
+    background-color: #00a7fc;
+  }
+  
+.createRandomButton:active {
+    color: black;
+    background-color: #00a7fc;
+    border-color: #00a7fc;
+  }
+  
+.createRandomButton:focus {
+    outline: none
   }
