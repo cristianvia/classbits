@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 
 
 export default function SoundMeter() {
-    
-    useEffect( () => {
-    "use strict";
+
+    useEffect(() => {
+        "use strict";
         var paths = document.getElementsByTagName('path');
         var visualizer = document.getElementById('visualizer');
         var mask = visualizer.getElementById('mask');
@@ -69,11 +69,17 @@ export default function SoundMeter() {
                     var db = 20 * (Math.log(rms) / Math.log(10));
                     db = Math.max(db, 0); // sanity check
                     h.innerHTML = Math.floor(db) + " dB";
+                    let failSound = new Audio("./audio/failSound.mp3")
+
+                    const failSoundFn = () => {
+                        failSound.play()
+                    }
 
                     if (db >= loud_volume_threshold) {
                         seconds += 0.5;
                         if (seconds >= 5) {
                             hSub.innerHTML = "Has estat en un ambient amb soroll durant<span> " + Math.floor(seconds) + " </span>seconds.";
+                            failSoundFn();
                         }
                     }
                     else {
@@ -117,10 +123,10 @@ export default function SoundMeter() {
                 this.className = "red-button";
             }
         };
-        return( () => {
+        return (() => {
             start = false;
         })
-    },[])
+    }, [])
 
     return (
         <>
