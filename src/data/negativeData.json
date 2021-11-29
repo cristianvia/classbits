@@ -1,10 +1,5 @@
 [
-    {
-        "id": 0,
-        "name": "Faltar el respecte a un company",
-        "emoji": "🤬",
-        "points": 2
-    },
+    
     {
         "id": 1,
         "name": "Molestar als companys",
@@ -31,20 +26,26 @@
     },
     {
         "id": 5,
+        "name": "Balancejar-se a la cadira",
+        "emoji": "🪑",
+        "points": 1
+    },
+    {
+        "id": 6,
+        "name": "Faltar el respecte a un company",
+        "emoji": "🤬",
+        "points": 2
+    },
+    {
+        "id": 7,
         "name": "Pegar-se amb un company",
         "emoji": "🤼",
         "points": 4
     },
     {
-        "id": 6,
+        "id": 8,
         "name": "No fer cas del mestre/a",
         "emoji": "👨‍🏫",
         "points": 5
-    },
-    {
-        "id": 7,
-        "name": "Balancejar-se a la cadira",
-        "emoji": "🪑",
-        "points": 1
     }
 ]

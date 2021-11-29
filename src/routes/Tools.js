@@ -7,7 +7,7 @@ export default function Tools() {
   return (
     <>
       <Header />
-      <div style={{ padding: 50 }}>
+      <div>
         <div class="container toolsContainer">
           <div>
             <Link to="/soundMeter">
