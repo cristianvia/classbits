@@ -7,10 +7,10 @@ import React, { useState, useEffect } from 'react/cjs/react.development';
 
 export default function RandomUser() {
 var randomAvatar = [];
-const [chosenAvatar, setChosenAvatar] = useState([""]);
+const [chosenAvatar, setChosenAvatar] = useState([]);
 
     const changeState = () => {
-        setChosenAvatar([""])
+        setChosenAvatar([])
     }
 
     const getRandomAvatar = () => {
