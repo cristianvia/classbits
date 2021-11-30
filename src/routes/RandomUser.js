@@ -7,10 +7,10 @@ import React, { useState, useEffect } from 'react/cjs/react.development';
 
 export default function RandomUser() {
 var randomAvatar = [];
-const [chosenAvatar, setChosenAvatar] = useState([]);
+const [chosenAvatar, setChosenAvatar] = useState(0);
 
     const changeState = () => {
-        setChosenAvatar([])
+        setChosenAvatar(Math.floor(Math.random() * (30 - 1) + 1))
     }
 
     const getRandomAvatar = () => {
@@ -18,8 +18,9 @@ const [chosenAvatar, setChosenAvatar] = useState([]);
         var randomNumber = Math.floor(Math.random() * (max - 1) + 1);
         randomAvatar = avatarData[randomNumber];
     }
+
     getRandomAvatar();
-    
+
     return (
         <>
             <Header />
