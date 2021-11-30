@@ -60,7 +60,7 @@ html{
   @media (max-width: 1400px) {
     .avatarImage{
       width:250px!important;
-      height:250px;
+      height:250px!important;
     }
 
     .cardDescription{
