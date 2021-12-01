@@ -6,12 +6,11 @@ import React, { useState } from 'react/cjs/react.development';
 
 
 export default function RandomUser() {
-var randomAvatar = [];
-// const [chosenAvatar, setChosenAvatar] = useState([""]);
+    var randomAvatar = [];
 
-//     const updateAvatarRender = () => {
-//         setChosenAvatar([""])
-//     }   
+    function refreshPage() {
+        window.location.reload(false);
+    }
 
     const getRandomAvatar = () => {
         var max = avatarData.length;
@@ -20,21 +19,21 @@ var randomAvatar = [];
     }
 
     getRandomAvatar();
-//onClick={updateAvatarRender}
+
     return (
         <>
             <Header />
             <main>
                 <div style={{ padding: 70 }}>
-                    <button class="createRandomButton" > Usuari aleatori </button>
-                            <div class="randAvatar">
-                                <Avatar
-                                    id={randomAvatar.id}
-                                    name={randomAvatar.name}
-                                    surname={randomAvatar.surname}
-                                    img={randomAvatar.img}
-                                />
-                            </div>
+                    <button class="createRandomButton" onClick={refreshPage}> Usuari aleatori </button>
+                    <div class="randAvatar">
+                        <Avatar
+                            id={randomAvatar.id}
+                            name={randomAvatar.name}
+                            surname={randomAvatar.surname}
+                            img={randomAvatar.img}
+                        />
+                    </div>
                 </div>
 
             </main>
