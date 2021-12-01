@@ -20,13 +20,13 @@ var randomAvatar = [];
     }
 
     getRandomAvatar();
-
+//onClick={updateAvatarRender}
     return (
         <>
             <Header />
             <main>
                 <div style={{ padding: 70 }}>
-                    <button class="createRandomButton" onClick={updateAvatarRender}> Usuari aleatori </button>
+                    <button class="createRandomButton" > Usuari aleatori </button>
                             <div class="randAvatar">
                                 <Avatar
                                     id={randomAvatar.id}
