@@ -1,11 +1,26 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged  } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
-import { Button } from "react";
+import { useState, useEffect } from "react";
 
 
 function Header() {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+              const uid = user.uid;
+              // ...
+            } else {
+              // User is signed out
+              // ...
+            }
+          })
+    }, [])
+
     const signInWithGoogle = () => {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
@@ -24,6 +39,7 @@ function Header() {
                 <Link to="/game">ClassBits</Link>
                 <Link to="/tools">Eines</Link>
                 <button onClick={signInWithGoogle}>Entra con google</button>
+                <span>{user ? "Bienvenido "+user.displayName : ""}</span>
             </nav>
         </header>
     )
