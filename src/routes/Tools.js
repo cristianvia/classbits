@@ -39,6 +39,12 @@ export default function Tools() {
             </Link>
             <figcaption class="textCaption">ChiBit aleatori</figcaption>
           </div>
+          <div>
+            <Link to="/chronometer">
+              <img src="../../images/tools/chronometer.png" alt="Cronòmetre" class="toolsCircle" />
+            </Link>
+            <figcaption class="textCaption">Cronòmetre</figcaption>
+          </div>
         </div>
       </div>
     </>

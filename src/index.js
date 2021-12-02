@@ -9,6 +9,7 @@ import Groups from './routes/Groups';
 import Pergamino from './routes/Pergamino';
 import RandomUser from './routes/RandomUser';
 import SoundMeter from "./routes/SoundMeter"
+import Chronometer from "./routes/Chronometer"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="pergamino" element={<Pergamino />} />
       <Route path="randomUser" element={<RandomUser />} />
       <Route path="soundMeter" element={<SoundMeter />} />
+      <Route path="chronometer" element={<Chronometer />} />
       <Route path="dailySentence" element={<DailySentence />} />
     </Routes>
     </BrowserRouter>
