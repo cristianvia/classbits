@@ -38,8 +38,9 @@ function Header() {
                 <Link to="/">Inici</Link>
                 <Link to="/game">ClassBits</Link>
                 <Link to="/tools">Eines</Link>
-                <button onClick={signInWithGoogle}>Entra con google</button>
-                <span>{user ? "Bienvenido "+user.displayName : ""}</span>
+                <span class="welcome">{user ? "Bienvenido "+user.displayName : ""}</span>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                {user ? <span class="loginButton" onClick={signInWithGoogle}>Cambiar de cuenta </span> : <span class="loginButton" onClick={signInWithGoogle}>Entra con google </span> }
             </nav>
         </header>
     )
