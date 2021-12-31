@@ -204,20 +204,7 @@ function Avatar(props) {
                                     );
                                 })}
                             </ul>
-                            {/* 
-
-                        //La cantidad deberá determinarse por el valor que venga de data y pasárselo a la función
-                        Ejemplo: id:0, amount: 10,
-                        exchangeAll(props.amount)
-                        exchangeAll = () => {
-                            for (var i = 0; i < props.amount; i++) {
-                                Array.from(document.querySelectorAll(".subtract-count")).forEach(button => button.click())
-                                i++= i;
-                                }
                             
-                        }
-                        
-                         */}
                         </div>
                     </Tabs>
                 </div>
