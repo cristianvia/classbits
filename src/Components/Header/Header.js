@@ -48,8 +48,8 @@ function Header() {
         <header>
             <nav>
                 <Link to="/">Inici</Link>
-                <Link to="/game">ClassBits</Link>
-                <Link to="/tools">Eines</Link>
+                {user ? <Link to="/game">ClassBits</Link> : ""}
+                {user ? <Link to="/tools">Eines</Link> : ""}
                 <span class="welcome">{user ? "Bienvenido " + user.displayName : ""}</span>
                 <span>&nbsp;&nbsp;&nbsp;</span>
                 {user ? <span class="loginButton" onClick={logOutGoogle}>Desconectar</span> : <span class="loginButton" onClick={signInWithGoogle}>Entra con google </span>}
