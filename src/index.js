@@ -12,21 +12,27 @@ import SoundMeter from "./routes/SoundMeter"
 import Chronometer from "./routes/Chronometer"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
+import AddEdit from "./routes/AddEdit";
+import View from './routes/View';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="game" element={<App />} />
-      <Route path="tools" element={<Tools />} />
-      <Route path="groups" element={<Groups />} />
-      <Route path="pergamino" element={<Pergamino />} />
-      <Route path="randomUser" element={<RandomUser />} />
-      <Route path="soundMeter" element={<SoundMeter />} />
-      <Route path="chronometer" element={<Chronometer />} />
-      <Route path="dailySentence" element={<DailySentence />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="game" element={<App />} />
+        <Route path="tools" element={<Tools />} />
+        <Route path="groups" element={<Groups />} />
+        <Route path="pergamino" element={<Pergamino />} />
+        <Route path="randomUser" element={<RandomUser />} />
+        <Route path="soundMeter" element={<SoundMeter />} />
+        <Route path="chronometer" element={<Chronometer />} />
+        <Route path="dailySentence" element={<DailySentence />} />
+        {/* Avatar management */}
+        <Route path="add" element={<AddEdit/>}/>
+        <Route path="update/:id" element={<AddEdit/>}/>
+        <Route path="view/:id" element={<View/>}/>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
