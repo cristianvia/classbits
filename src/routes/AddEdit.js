@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from "react-router-dom";
+import { Navigate, useHistory, useNavigate, useParams } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
@@ -15,7 +15,6 @@ const initialState = {
     surname: "",
     img: "",
 };
-
 
 
 function SaveDataToLocalStorage(dataFromState) {
@@ -36,6 +35,7 @@ const AddEdit = () => {
     
 
     const { id, name, surname, img } = state;
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -48,6 +48,8 @@ const AddEdit = () => {
             console.log("Algun input está vacío")
         } else {
             SaveDataToLocalStorage(state)
+            alert("Usuari afegit correctament")
+            setTimeout(() => window.location.reload(), 500)
         }
     };
 
@@ -93,7 +95,7 @@ const AddEdit = () => {
 
                 <label htmlFor="img">ChiBit</label>
                 <input
-                    type="text"
+                    type="file"
                     id="img"
                     name="img"
                     placeholder="Imatge"
