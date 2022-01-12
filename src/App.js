@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Avatar from './Components/Avatar/Avatar';
 import Header from './Components/Header/Header';
+import StudentHeader from "./Components/StudentHeader/StudentHeader"
 
 import avatarData from "./data/avatarData.json";
 
@@ -192,6 +193,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
+      <StudentHeader />
       <div className="apps">
         <ul>
           {classroom.map((data) => {
