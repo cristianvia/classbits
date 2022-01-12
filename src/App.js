@@ -6,30 +6,30 @@ import StudentHeader from "./Components/StudentHeader/StudentHeader"
 
 import avatarData from "./data/avatarData.json";
 
-var fakeData = [{
-  "id": 0,
-  "name": "Tota la classe",
-  "surname": "",
-  "img": "../../images/chibi_classroom.png"
-},
-{
-  "id": 1,
-  "name": "Marc",
-  "surname": "Aguado",
-  "img": "../../images/chibis/1.png"
-},
-{
-  "id": 2,
-  "name": "Alba",
-  "surname": "Alabart",
-  "img": "../../images/chibis/2.png"
-},
-{
-  "id": 3,
-  "name": "Adriana",
-  "surname": "Bertran",
-  "img": "../../images/chibis/3.png"
-},
+// var fakeData = [{
+//   "id": 0,
+//   "name": "Tota la classe",
+//   "surname": "",
+//   "img": "../../images/chibi_classroom.png"
+// },
+// {
+//   "id": 1,
+//   "name": "Marc",
+//   "surname": "Aguado",
+//   "img": "../../images/chibis/1.png"
+// },
+// {
+//   "id": 2,
+//   "name": "Alba",
+//   "surname": "Alabart",
+//   "img": "../../images/chibis/2.png"
+// },
+// {
+//   "id": 3,
+//   "name": "Adriana",
+//   "surname": "Bertran",
+//   "img": "../../images/chibis/3.png"
+// },
   // {
   //   "id": 4,
   //   "name": "Guillem",
@@ -180,9 +180,23 @@ var fakeData = [{
   //   "surname": "Vila",
   //   "img": "../../images/chibis/28.png"
   // }
-];
+// ];
 
-localStorage.setItem("classroom", JSON.stringify(fakeData));
+
+//Check if localstorage classroom exists, otherwise create it
+const checkIfLSexists = () => {
+  var checkLs = JSON.parse(localStorage.getItem("classroom"))
+  if (checkLs == null){
+    localStorage.setItem("classroom", JSON.stringify([{
+      "id": 0,
+      "name": "Tota la classe",
+      "surname": "",
+      "img": "../../images/chibi_classroom.png"
+    }]));
+  }
+}
+
+checkIfLSexists();
 
 var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
