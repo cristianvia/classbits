@@ -5,21 +5,53 @@ import "./AddEdit.css";
 import Header from '../Components/Header/Header';
 import StudentHeader from "../Components/StudentHeader/StudentHeader"
 
+//get last id from array
+let arrayClassroom = JSON.parse(localStorage.getItem("classroom"))
+const countId = arrayClassroom.filter(item => item.id).length;
+
 const initialState = {
+    id: countId+1,
     name: "",
     surname: "",
     img: "",
+};
+
+
+
+function SaveDataToLocalStorage(dataFromState) {
+    var a = [];
+    // Parse the serialized data back into an aray of objects
+    a = JSON.parse(localStorage.getItem('classroom')) || [];
+    // Push the new data (whether it be an object or anything else) onto the array
+    a.push(dataFromState);
+    // Alert the array value
+    // Re-serialize the array back into a string and store it in localStorage
+    localStorage.setItem('classroom', JSON.stringify(a));
 }
-
-const handleInputChange = () => { };
-
-const handleSubmit = () => { };
 
 const AddEdit = () => {
     const [state, setState] = useState(initialState);
     const [data, setData] = useState({});
 
-    const { name, surname, img } = state;
+    
+
+    const { id, name, surname, img } = state;
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setState({ ...state, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!name || !surname || !img) {
+            console.log("Algun input está vacío")
+        } else {
+            SaveDataToLocalStorage(state)
+        }
+    };
+
+
     return (
         <div>
             <Header />
@@ -32,11 +64,21 @@ const AddEdit = () => {
                 alignContent: "center"
             }}
                 onSubmit={handleSubmit}>
+                <label hidden htmlFor="id">Id</label>
+                <input
+                    type="hidden"
+                    id="id"
+                    name="id"
+                    placeholder="Id"
+                    value={id}
+                    onChange={handleInputChange} />
+
                 <label htmlFor="name">Nom</label>
                 <input
                     type="text"
                     id="name"
-                    placeHolder="Alumne"
+                    name="name"
+                    placeholder="Alumne"
                     value={name}
                     onChange={handleInputChange} />
 
@@ -44,7 +86,8 @@ const AddEdit = () => {
                 <input
                     type="text"
                     id="surname"
-                    placeHolder="Cognom"
+                    name="surname"
+                    placeholder="Cognom"
                     value={surname}
                     onChange={handleInputChange} />
 
@@ -52,7 +95,8 @@ const AddEdit = () => {
                 <input
                     type="text"
                     id="img"
-                    placeHolder="Imatge"
+                    name="img"
+                    placeholder="Imatge"
                     value={img}
                     onChange={handleInputChange} />
 
