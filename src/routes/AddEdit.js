@@ -28,14 +28,15 @@ function SaveDataToLocalStorage(dataFromState) {
     localStorage.setItem('classroom', JSON.stringify(a));
 }
 
+
 const AddEdit = () => {
     const [state, setState] = useState(initialState);
     const [data, setData] = useState({});
+    const [imgState, setImgState] = useState("");
 
     
 
     const { id, name, surname, img } = state;
-    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -53,6 +54,33 @@ const AddEdit = () => {
         }
     };
 
+    useEffect(() => {
+        // Check for the File API support.
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('img').addEventListener('change', handleFileSelect, false);
+  } else {
+    alert('The File APIs are not fully supported in this browser.');
+  }
+  
+  function handleFileSelect(evt) {
+    var f = evt.target.files[0]; // FileList object
+    var reader = new FileReader();
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        var binaryData = e.target.result;
+        //Converting Binary Data to base 64
+        var base64String = window.btoa(binaryData);
+        //showing file converted to base64
+        document.getElementById('base64').value = base64String;
+        setImgState(base64String);
+        alert('File converted to base64 successfuly!\nCheck in Textarea');
+      };
+    })(f);
+    // Read in the image file as a data URL.
+    reader.readAsBinaryString(f);
+  }
+    }, []);
 
     return (
         <div>
@@ -104,6 +132,7 @@ const AddEdit = () => {
 
                 <input type="submit" value="Guardar" />
             </form>
+            <textarea id="base64" rows="5"></textarea>
         </div>
     )
 }
