@@ -123,7 +123,8 @@ const AddEdit = () => {
       });
 
       // demo purposes only
-      codeElem.textContent = JSON.stringify(data, undefined, 2);
+      var finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
+      console.log(finalData)
       // /demo purposes only
     };
 
@@ -156,10 +157,6 @@ const AddEdit = () => {
 
         <button type="submit">Submit</button>
       </form>
-    </div>
-
-    <div class="powered-by">
-      <p>powered by <a href="https://formcarry.com">formcarry.</a></p>
     </div>
 
     <div class="data-holder">
