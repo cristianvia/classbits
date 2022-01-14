@@ -141,7 +141,7 @@ const AddEdit = () => {
         <div>
             <Header />
             <StudentHeader />
-            <h2>Afegir alumne:</h2>
+            <h2 style={{textAlign: "center"}}>Afegir alumne</h2>
             <form id="addStudentForm"
                 style={{
                     margin: "auto",
@@ -156,10 +156,10 @@ const AddEdit = () => {
                     name="id"
                     placeholder="Id"/>
 
-                <label for="nameInput">Name</label>
+                <label for="nameInput">Nom</label>
                 <input type="text" id="nameInput" name="name" />
 
-                <label for="surnameInput">Surname</label>
+                <label for="surnameInput">Cognom</label>
                 <input type="text" id="surnameInput" name="surname" />
 
                 <label for="pictureInput">Imatge</label>
