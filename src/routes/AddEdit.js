@@ -112,7 +112,7 @@ const AddEdit = () => {
             const formData = new FormData(formElement);
 
             let data = {
-                id: countId+1,
+                id: countId + 1,
                 name: formData.get("name"),
                 surname: formData.get("surname"),
                 img: codeElem.textContent = JSON.stringify(myFiles, undefined, 2)
@@ -139,7 +139,7 @@ const AddEdit = () => {
         <div>
             <Header />
             <StudentHeader />
-            <h2 style={{textAlign: "center"}}>Afegir alumne</h2>
+            <h2 style={{ textAlign: "center" }}>Afegir alumne</h2>
             <form id="addStudentForm"
                 style={{
                     margin: "auto",
@@ -152,7 +152,7 @@ const AddEdit = () => {
                     type="hidden"
                     id="id"
                     name="id"
-                    placeholder="Id"/>
+                    placeholder="Id" />
 
                 <label for="nameInput">Nom</label>
                 <input type="text" id="nameInput" name="name" />
@@ -165,6 +165,9 @@ const AddEdit = () => {
 
                 <input type="submit" value="Guardar" />
             </form>
+            <div className="warningRegister">
+            ⚠️ ATENCIÓ! ⚠️ Un cop creat el personatge, no es podrà modificar cap dada, assegura't que està tot bé!
+                </div>
         </div>
     )
 }

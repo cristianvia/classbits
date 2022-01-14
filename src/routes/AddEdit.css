@@ -24,3 +24,13 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: #45a049;
 }
+
+.warningRegister{
+    background-color: #e98527;
+    padding: 25px;
+    margin:25px;
+    text-align: center;
+    font-weight: 800;
+    color:white;
+    border-radius: 25px;
+}
