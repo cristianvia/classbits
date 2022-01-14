@@ -1,15 +1,15 @@
 import Header from '../Components/Header/Header';
-import avatarData from "../data/avatarData.json";
 import './GroupStyles.css';
 
 export default function Groups() {
 
   var arrayChibits = [];
+  var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
   const getArrayChibits = () => {
     //Must ensure everytime it's called starts empty
     arrayChibits = [];
-    avatarData.map((data) => {
+    classroom.map((data) => {
       arrayChibits.push(data.name);
     })
     //shift() = removes first element of array (the whole class)
