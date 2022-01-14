@@ -1,21 +1,21 @@
 import Header from '../Components/Header/Header';
 import './RandomUserStyles.css';
-import avatarData from "../data/avatarData.json";
 import Avatar from '../Components/Avatar/Avatar';
 import React, { useState } from 'react/cjs/react.development';
 
 
 export default function RandomUser() {
     var randomAvatar = [];
+    var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
     function refreshPage() {
         window.location.reload(false);
     }
 
     const getRandomAvatar = () => {
-        var max = avatarData.length;
+        var max = classroom.length;
         var randomNumber = Math.floor(Math.random() * (max - 1) + 1);
-        randomAvatar = avatarData[randomNumber];
+        randomAvatar = classroom[randomNumber];
     }
 
     getRandomAvatar();
