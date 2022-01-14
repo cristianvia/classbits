@@ -110,12 +110,13 @@ const AddEdit = () => {
             }
 
             const formData = new FormData(formElement);
+            var finalData = "";
 
             let data = {
                 id: countId + 1,
                 name: formData.get("name"),
                 surname: formData.get("surname"),
-                img: codeElem.textContent = JSON.stringify(myFiles, undefined, 2)
+                img: finalData
             };
 
             Object.entries(myFiles).map((item) => {
@@ -124,7 +125,7 @@ const AddEdit = () => {
                 data[key] = file;
             });
 
-            var finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
+            finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
 
             SaveDataToLocalStorage(data);
             alert("Usuari afegit correctament")
