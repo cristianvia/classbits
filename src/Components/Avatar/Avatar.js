@@ -101,7 +101,7 @@ function Avatar(props) {
     return (
         <>
             <li className="avatarPointer" id={props.id} onClick={openModal}>
-                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id === 0) ? totalPoints : count}</span>
+                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id === 0) ? "" : count}</span>
                 <img src={props.img} width="250" alt="Avatar" />
                 <span className="name">{props.name}</span>
                 <span className="surname">{props.surname}</span>
