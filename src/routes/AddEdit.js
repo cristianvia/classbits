@@ -124,8 +124,6 @@ const AddEdit = () => {
                 data[key] = file;
             });
 
-            var finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
-            console.log(data)
             SaveDataToLocalStorage(data);
             alert("Usuari afegit correctament")
             setTimeout(() => window.location.reload(), 500)
