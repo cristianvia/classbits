@@ -124,6 +124,9 @@ const AddEdit = () => {
                 data[key] = file;
             });
 
+            var finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
+            console.log(data)
+
             SaveDataToLocalStorage(data);
             alert("Usuari afegit correctament")
             setTimeout(() => window.location.reload(), 500)
@@ -165,8 +168,12 @@ const AddEdit = () => {
 
                 <input type="submit" value="Guardar" />
             </form>
+            <div class="hideClass">
+                <p>DATA:</p>
+                <pre id="code"></pre>
+            </div>
             <div className="warningRegister">
-            ⚠️ ATENCIÓ! ⚠️ Un cop creat el personatge, no es podrà modificar cap dada, assegura't que està tot bé!
+                ⚠️ ATENCIÓ! ⚠️ Un cop creat el personatge, no es podrà modificar cap dada, assegura't que està tot bé!
                 </div>
         </div>
     )

@@ -34,3 +34,7 @@ input[type="submit"]:hover{
     color:white;
     border-radius: 25px;
 }
+
+.hideClass{
+    display:none;
+}
