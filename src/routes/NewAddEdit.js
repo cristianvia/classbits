@@ -30,139 +30,109 @@ function SaveDataToLocalStorage(dataFromState) {
 
 
 const AddEdit = () => {
+    const [state, setState] = useState(initialState);
+    const [data, setData] = useState({});
+    const [imgState, setImgState] = useState("");
 
+    
 
-    useEffect(() => {
-        // demo purposes only
-    const codeElem = document.getElementById("code");
-    // /demo purposes only
+    const { id, name, surname, img } = state;
 
-    const fileInput = document.getElementById("pictureInput");
-
-    // This is for storing the base64 strings
-    let myFiles = {};
-    // if you expect files by default, make this disabled
-    // we will wait until the last file being processed
-    let isFilesReady = true;
-
-    fileInput.addEventListener("change", async (event) => {
-      // clean up earliest items
-      myFiles = {};
-      // set state of files to false until each of them is processed
-      isFilesReady = false;
-
-      // this is to get the input name attribute, in our case it will yield as "picture"
-      // I'm doing this because I want you to use this code dynamically
-      // so if you change the input name, the result also going to effect
-      const inputKey = fileInput.getAttribute("name");
-      var files = event.srcElement.files;
-
-      const filePromises = Object.entries(files).map((item) => {
-        return new Promise((resolve, reject) => {
-          const [index, file] = item;
-          const reader = new FileReader();
-          reader.readAsBinaryString(file);
-
-          reader.onload = function (event) {
-            // if it's multiple upload field then set the object key as picture[0], picture[1]
-            // otherwise just use picture
-            const fileKey = `${inputKey}${
-              files.length > 1 ? `[${index}]` : ""
-            }`;
-            // Convert Base64 to data URI
-            // Assign it to your object
-            myFiles[fileKey] = `data:${file.type};base64,${btoa(
-              event.target.result
-            )}`;
-
-            resolve();
-          };
-          reader.onerror = function () {
-            console.log("can't read the file");
-            reject();
-          };
-        });
-      });
-
-      Promise.all(filePromises)
-        .then(() => {
-          console.log("ready to submit");
-          isFilesReady = true;
-
-          // demo purposes only
-          codeElem.textContent = JSON.stringify(myFiles, undefined, 2);
-          // /demo purposes only
-        })
-        .catch((error) => {
-          console.log(error);
-          console.log("something wrong happened");
-        });
-    });
-
-    const formElement = document.getElementById("formcarryForm");
-
-    const handleForm = async (event) => {
-      event.preventDefault();
-
-      if (!isFilesReady) {
-        console.log("files still getting processed");
-        return;
-      }
-
-      const formData = new FormData(formElement);
-
-      let data = {
-        name: formData.get("name"),
-        message: formData.get("message")
-      };
-
-      Object.entries(myFiles).map((item) => {
-        const [key, file] = item;
-        // append the file to data object
-        data[key] = file;
-      });
-
-      // demo purposes only
-      var finalData = codeElem.textContent = JSON.stringify(data, undefined, 2);
-      console.log(finalData)
-      // /demo purposes only
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setState({ ...state, [name]: value });
     };
 
-    formElement.addEventListener("submit", handleForm);
-    
-    }, []);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!name || !surname || !img) {
+            console.log("Algun input está vacío")
+        } else {
+            SaveDataToLocalStorage(state)
+            alert("Usuari afegit correctament")
+            setTimeout(() => window.location.reload(), 500)
+        }
+    };
 
-    
+    useEffect(() => {
+        // Check for the File API support.
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('img').addEventListener('change', handleFileSelect, false);
+  } else {
+    alert('The File APIs are not fully supported in this browser.');
+  }
+  
+  function handleFileSelect(evt) {
+    var f = evt.target.files[0]; // FileList object
+    var reader = new FileReader();
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        var binaryData = e.target.result;
+        //Converting Binary Data to base 64
+        var base64String = window.btoa(binaryData);
+        //showing file converted to base64
+        document.getElementById('base64').value = base64String;
+        setImgState(base64String);
+        alert('File converted to base64 successfuly!\nCheck in Textarea');
+      };
+    })(f);
+    // Read in the image file as a data URL.
+    reader.readAsBinaryString(f);
+  }
+    }, []);
 
     return (
         <div>
             <Header />
             <StudentHeader />
             <h2>Afegir alumne:</h2>
-            <div class="formcarryContainer">
-      <form id="formcarryForm">
-        <label for="nameInput">Name</label>
-        <input type="text" id="nameInput" name="name" />
+            <form style={{
+                margin: "auto",
+                padding: "15px",
+                maxWidth: "400px",
+                alignContent: "center"
+            }}
+                onSubmit={handleSubmit}>
+                <label hidden htmlFor="id">Id</label>
+                <input
+                    type="hidden"
+                    id="id"
+                    name="id"
+                    placeholder="Id"
+                    value={id}
+                    onChange={handleInputChange} />
 
-        <label for="messageInput">Message</label>
-        <textarea
-          id="messageInput"
-          cols="30"
-          rows="2"
-          name="message"
-        ></textarea>
+                <label htmlFor="name">Nom</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Alumne"
+                    value={name}
+                    onChange={handleInputChange} />
 
-        <label for="pictureInput">Picture</label>
-        <input type="file" id="pictureInput" name="picture" multiple />
+                <label htmlFor="surname">Cognom</label>
+                <input
+                    type="text"
+                    id="surname"
+                    name="surname"
+                    placeholder="Cognom"
+                    value={surname}
+                    onChange={handleInputChange} />
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+                <label htmlFor="img">ChiBit</label>
+                <input
+                    type="file"
+                    id="img"
+                    name="img"
+                    placeholder="Imatge"
+                    value={img}
+                    onChange={handleInputChange} />
 
-    <div class="data-holder">
-      <p>DATA:</p>
-      <pre id="code"></pre>
-    </div>
+                <input type="submit" value="Guardar" />
+            </form>
+            <textarea id="base64" rows="5"></textarea>
         </div>
     )
 }
