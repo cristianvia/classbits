@@ -6,6 +6,10 @@
     background: rgb(202, 60, 60);
 }
 
+.button-error:hover {
+    background: rgb(241, 0, 0);
+}
+
 .button-warning {
     background: rgb(223, 117, 20);
 }
