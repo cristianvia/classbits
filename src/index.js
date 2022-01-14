@@ -13,6 +13,7 @@ import Chronometer from "./routes/Chronometer"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 import AddEdit from "./routes/AddEdit";
+import Settings from "./routes/Settings";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,7 +29,7 @@ ReactDOM.render(
         <Route path="chronometer" element={<Chronometer />} />
         <Route path="dailySentence" element={<DailySentence />} />
         <Route path="add" element={<AddEdit />} />
-        <Route path="update/:id" element={<AddEdit />} />
+        <Route path="settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
