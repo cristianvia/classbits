@@ -8,8 +8,8 @@ const StudentHeader = () => {
         <div className="headerSH">
             <div className="navSH">
                 <div>
-                    <Link to="/add">Afegir alumne</Link>
-                    {/* <Link to="/update/:id">Actualitzar alumne</Link> */}
+                    <Link to="/add">Afegir alumne</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Link to="/settings">Configuració</Link>
                     {/* <Link to="/view/:id">Veure</Link> */}
                 </div>
             </div>
