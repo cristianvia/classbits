@@ -117,7 +117,7 @@ function Avatar(props) {
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
                 <div className="container">
-                    <span className="counter">{(props.id === 0) ? totalPoints : count}</span>
+                    <span className="counter">{(props.id === 0) ? "" : count}</span>
                     <img src={props.img} className="avatarImage" alt="Avatar" />
 
 
@@ -161,7 +161,7 @@ function Avatar(props) {
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.name} {props.surname}</h2>
                 <div className="container">
-                    <span className="counter">{(props.id === 0) ? totalPoints : count}</span>
+                    <span className="counter">{(props.id === 0) ? "" : count}</span>
                     <img src={props.img} className="avatarImage" alt="Avatar" />
 
 
