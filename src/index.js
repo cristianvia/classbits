@@ -13,6 +13,7 @@ import Chronometer from "./routes/Chronometer"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 import AddEdit from "./routes/AddEdit";
+import EditClassroom from "./routes/EditClassroom";
 import Settings from "./routes/Settings";
 
 ReactDOM.render(
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Route path="chronometer" element={<Chronometer />} />
         <Route path="dailySentence" element={<DailySentence />} />
         <Route path="add" element={<AddEdit />} />
+        <Route path="editclassroom" element={<EditClassroom />} />
         <Route path="update/:id" element={<AddEdit />} />
         <Route path="settings" element={<Settings />} />
       </Routes>
