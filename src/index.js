@@ -14,7 +14,6 @@ import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 import AddEdit from "./routes/AddEdit";
 import Settings from "./routes/Settings";
-import HowTo from "./routes/HowTo";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -31,7 +30,6 @@ ReactDOM.render(
         <Route path="dailySentence" element={<DailySentence />} />
         <Route path="add" element={<AddEdit />} />
         <Route path="settings" element={<Settings />} />
-        <Route path="howto" element={<HowTo />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
