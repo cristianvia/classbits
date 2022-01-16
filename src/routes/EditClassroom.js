@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 
 const EditClassroom = () => {
@@ -19,8 +19,8 @@ const EditClassroom = () => {
                         return (
                             <tr key={id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{data[id].name}</td>
-                                <td>{data[id].surname}</td>
+                                <td>{classroom[id].name}</td>
+                                <td>{classroom[id].surname}</td>
                                 <td>
                                     <Link to={`/update/${id}`}>
                                         <button>Editar
