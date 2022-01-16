@@ -2,6 +2,8 @@ import React from 'react'
 import './Settings.css'
 import Header from '../Components/Header/Header';
 import StudentHeader from "../Components/StudentHeader/StudentHeader"
+import { Link } from "react-router-dom";
+
 
 function deleteClassroom() {
     window.localStorage.clear();
@@ -15,7 +17,14 @@ const Settings = () => {
             <Header />
             <StudentHeader />
             <div className="settings">
-                <button className="button-error" onClick={deleteClassroom}>Borrar classe</button>
+                <p>
+                    <button className="button-error" onClick={deleteClassroom}>Borrar classe</button>
+                </p>
+                <p>
+                    <Link to="/EditClassroom">
+                        <button className="button-secondary">Editar classe</button>
+                    </Link>
+                </p>
             </div>
         </div>
     )
