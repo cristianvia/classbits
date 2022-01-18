@@ -12,7 +12,7 @@ var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 var idStudent = "";
 
 function UpdateDataToLocalStorage(newClassroomEdited) {
-    
+
     classroom[idStudent].name = newClassroomEdited.name;
     classroom[idStudent].surname = newClassroomEdited.surname;
     classroom[idStudent].img = newClassroomEdited.img;
