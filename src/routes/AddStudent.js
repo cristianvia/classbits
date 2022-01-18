@@ -139,10 +139,6 @@ const AddStudent = () => {
 
                 <input type="submit" value="Guardar" />
             </form>
-
-            <div className="warningRegister">
-                ⚠️ ATENCIÓ! ⚠️ Un cop creat el personatge, no es podrà modificar cap dada, assegura't que està tot bé!
-                </div>
         </div>
     )
 }
