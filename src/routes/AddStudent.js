@@ -8,7 +8,9 @@ import imageCompression from 'browser-image-compression';
 
 //get last id from array
 let arrayClassroom = JSON.parse(localStorage.getItem("classroom"))
-const countId = arrayClassroom.filter(item => item.id).length;
+//get last object of the array
+const lastItem = arrayClassroom[arrayClassroom.length -1]
+const countId = lastItem.id;
 
 const initialState = {
     id: countId + 1,
