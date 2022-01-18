@@ -21,6 +21,7 @@ const EditClassroom = () => {
             // Re-serialize the array back into a string and store it in localStorage
             localStorage.setItem('classroom', JSON.stringify(classroom));
         }
+        setTimeout(() => window.location.reload(), 500)
     };
 
     return (
