@@ -1,5 +1,5 @@
 import Header from '../Components/Header/Header';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './ChronometerStyles.css';
 
 export default function Chronometer() {

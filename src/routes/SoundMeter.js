@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 export default function SoundMeter() {
 
     useEffect(() => {
-        "use strict";
         var paths = document.getElementsByTagName('path');
         var visualizer = document.getElementById('visualizer');
         var mask = visualizer.getElementById('mask');
@@ -131,7 +130,7 @@ export default function SoundMeter() {
     return (
         <>
             <Header />
-            <div class="microphoneContainer">
+            <div className="microphoneContainer">
 
                 <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
                     <defs>
@@ -139,21 +138,21 @@ export default function SoundMeter() {
                             <g id="maskGroup"></g>
                         </mask>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" class="stop0" />
-                            <stop offset="40%" class="stop40" />
-                            <stop offset="60%" class="stop65" />
-                            <stop offset="85%" class="stop85" />
-                            <stop offset="100%" class="stop100" />
+                            <stop offset="0%" className="stop0" />
+                            <stop offset="40%" className="stop40" />
+                            <stop offset="60%" className="stop65" />
+                            <stop offset="85%" className="stop85" />
+                            <stop offset="100%" className="stop100" />
                         </linearGradient>
                     </defs>
                     <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
                 </svg>
 
-                <h6 class="main-text" id="#micro1">Permet l'ús del microfon</h6>
+                <h6 className="main-text" id="#micro1">Permet l'ús del microfon</h6>
 
-                <h6 class="sub-text" id="#micro2"></h6>
+                <h6 className="sub-text" id="#micro2"></h6>
 
-                <div class="button-container"><button id="buttonStart" class="green-button">Medidor de so</button></div>
+                <div className="button-container"><button id="buttonStart" className="green-button">Medidor de so</button></div>
 
             </div>
         </>

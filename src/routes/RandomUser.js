@@ -1,7 +1,7 @@
 import Header from '../Components/Header/Header';
 import './RandomUserStyles.css';
 import Avatar from '../Components/Avatar/Avatar';
-import React, { useState } from 'react/cjs/react.development';
+import React from 'react/cjs/react.development';
 
 
 export default function RandomUser() {

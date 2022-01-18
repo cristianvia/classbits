@@ -78,25 +78,25 @@ function Avatar(props) {
     }
 
     //Count the total amount of points stored in localstorage
-    const [totalPoints, setTotalPoints] = useState(0);
-    var totalSumandos = 0;
+    // const [totalPoints, setTotalPoints] = useState(0);
+    // var totalSumandos = 0;
 
-    const checkTotal = () => {
-        if(localStorage.length > 0){
-            const sumandos = []
-            for (let i=0, len=localStorage.length; i<len; i++){
-                let key = localStorage.key(i); 
-                let val = parseInt(localStorage.getItem(key));
-                sumandos.push(val)
-            }
-            totalSumandos = sumandos.reduce((a, b) => a + b, 0);
-            setTotalPoints(totalSumandos);
-        }
-    };
+    // const checkTotal = () => {
+    //     if(localStorage.length > 0){
+    //         const sumandos = []
+    //         for (let i=0, len=localStorage.length; i<len; i++){
+    //             let key = localStorage.key(i); 
+    //             let val = parseInt(localStorage.getItem(key));
+    //             sumandos.push(val)
+    //         }
+    //         totalSumandos = sumandos.reduce((a, b) => a + b, 0);
+    //         setTotalPoints(totalSumandos);
+    //     }
+    // };
 
-    useEffect(() => {
-        checkTotal()
-    })
+    // useEffect(() => {
+    //     checkTotal()
+    // })
 
     return (
         <>

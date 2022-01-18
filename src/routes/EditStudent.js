@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, useHistory, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
