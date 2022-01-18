@@ -7,11 +7,15 @@ import StudentHeader from "../Components/StudentHeader/StudentHeader"
 import imageCompression from 'browser-image-compression';
 
 const EditStudent = () => {
+
+    const {id} = useParams();
+    console.log(id)
+
     return (
         <div>
             <Header />
             <StudentHeader />
-            <h2 style={{ textAlign: "center" }}>Afegir alumne</h2>
+            <h2 style={{ textAlign: "center" }}>Editar alumne</h2>
             <form id="addStudentForm"
                 style={{
                     margin: "auto",
@@ -19,20 +23,20 @@ const EditStudent = () => {
                     maxWidth: "400px",
                     alignContent: "center"
                 }}>
-                <label hidden for="id">Id</label>
+                <label hidden htmlFor="id">Id</label>
                 <input
                     type="hidden"
                     id="id"
                     name="id"
                     placeholder="Id" />
 
-                <label for="nameInput">Nom</label>
+                <label htmlFor="nameInput">Nom</label>
                 <input type="text" id="nameInput" name="name" />
 
-                <label for="surnameInput">Cognom</label>
+                <label htmlFor="surnameInput">Cognom</label>
                 <input type="text" id="surnameInput" name="surname" />
 
-                <label for="pictureInput">Imatge</label>
+                <label htmlFor="pictureInput">Imatge</label>
                 <input type="file" id="pictureInput" name="img" 
                 multiple 
                 accept="image/*"

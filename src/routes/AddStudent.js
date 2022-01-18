@@ -118,20 +118,20 @@ const AddStudent = () => {
                     maxWidth: "400px",
                     alignContent: "center"
                 }}>
-                <label hidden for="id">Id</label>
+                <label hidden htmlfor="id">Id</label>
                 <input
                     type="hidden"
                     id="id"
                     name="id"
                     placeholder="Id" />
 
-                <label for="nameInput">Nom</label>
+                <label htmlfor="nameInput">Nom</label>
                 <input type="text" id="nameInput" name="name" />
 
-                <label for="surnameInput">Cognom</label>
+                <label htmlfor="surnameInput">Cognom</label>
                 <input type="text" id="surnameInput" name="surname" />
 
-                <label for="pictureInput">Imatge</label>
+                <label htmlfor="pictureInput">Imatge</label>
                 <input type="file" id="pictureInput" name="img" 
                 multiple 
                 accept="image/*"
