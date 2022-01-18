@@ -12,7 +12,7 @@ import SoundMeter from "./routes/SoundMeter"
 import Chronometer from "./routes/Chronometer"
 import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
-import AddEdit from "./routes/AddEdit";
+import AddStudent from "./routes/AddStudent";
 import EditClassroom from "./routes/EditClassroom";
 import Settings from "./routes/Settings";
 
@@ -29,9 +29,9 @@ ReactDOM.render(
         <Route path="soundMeter" element={<SoundMeter />} />
         <Route path="chronometer" element={<Chronometer />} />
         <Route path="dailySentence" element={<DailySentence />} />
-        <Route path="add" element={<AddEdit />} />
+        <Route path="add" element={<AddStudent />} />
         <Route path="editclassroom" element={<EditClassroom />} />
-        <Route path="update/:id" element={<AddEdit />} />
+        <Route path="update/:id" element={<AddStudent />} />
         <Route path="settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>

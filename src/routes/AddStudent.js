@@ -48,7 +48,7 @@ const blobToBase64 = blob => {
     });
   };
 
-const AddEdit = () => {
+const AddStudent = () => {
 
     async function handleImageUpload(event) {
 
@@ -147,4 +147,4 @@ const AddEdit = () => {
     )
 }
 
-export default AddEdit;
+export default AddStudent;
