@@ -88,7 +88,7 @@ const EditStudent = () => {
             };
 
             UpdateDataToLocalStorage(data);
-            alert("Usuari afegit correctament")
+            alert("Usuari modificat correctament")
             setTimeout(() => window.location.reload(), 500)
         };
 
