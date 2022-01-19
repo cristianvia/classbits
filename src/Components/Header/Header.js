@@ -10,6 +10,7 @@ function Header() {
             <Link to="/">Inici</Link>
             <Link to="/game">ClassBits</Link>
             <Link to="/tools">Eines</Link>
+            <Link to="/settings">Configuració</Link>
             </nav>
         </header>
     )
