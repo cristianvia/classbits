@@ -7,6 +7,181 @@ import Tabs from "../Tab/Tabs";
 import negativeData from "../../data/negativeData.json";
 import exchangeData from "../../data/exchangeData.json";
 
+//Check if localstorage positive exists, otherwise create it
+const checkIfPositiveLsExist = () => {
+    var checkPositive = JSON.parse(localStorage.getItem("positive"))
+    if (checkPositive == null) {
+        localStorage.setItem("positive", JSON.stringify([
+            {
+                "id": 1,
+                "name": "Endreça i ajuda a endreçar",
+                "emoji": "📦",
+                "points": 1
+            },
+            {
+                "id": 2,
+                "name": "Està per la feina",
+                "emoji": "✏️",
+                "points": 1
+            },
+            {
+                "id": 3,
+                "name": "Fer l'encàrrec molt bé",
+                "emoji": "🎩",
+                "points": 1
+            },
+            {
+                "id": 4,
+                "name": "Participa",
+                "emoji": "🙋‍♂️",
+                "points": 1
+            },
+            {
+                "id": 5,
+                "name": "Pergamí del destí",
+                "emoji": "📜",
+                "points": 1
+            },
+            {
+                "id": 6,
+                "name": "S'esforça molt",
+                "emoji": "💪",
+                "points": 1
+            },
+            {
+                "id": 7,
+                "name": "Treballa en equip",
+                "emoji": "🧑‍🤝‍🧑",
+                "points": 1
+            },
+            {
+                "id": 8,
+                "name": "Treure un excel·lent",
+                "emoji": "💯",
+                "points": 2
+            }
+
+        ]));
+    }
+}
+//Check if localstorage negative exists, otherwise create it
+const checkIfNegativeLsExist = () => {
+    var checkNegative = JSON.parse(localStorage.getItem("negative"))
+    if (checkNegative == null) {
+        localStorage.setItem("negative", JSON.stringify([
+
+            {
+                "id": 1,
+                "name": "Molestar als companys",
+                "emoji": "😤",
+                "points": 1
+            },
+            {
+                "id": 2,
+                "name": "No estar atent",
+                "emoji": "🙄",
+                "points": 1
+            },
+            {
+                "id": 3,
+                "name": "No fer els deures",
+                "emoji": "✍️",
+                "points": 1
+            },
+            {
+                "id": 4,
+                "name": "No fer silenci",
+                "emoji": "🤐",
+                "points": 1
+            },
+            {
+                "id": 5,
+                "name": "Balancejar-se a la cadira",
+                "emoji": "🪑",
+                "points": 1
+            },
+            {
+                "id": 6,
+                "name": "Faltar el respecte a un company",
+                "emoji": "🤬",
+                "points": 2
+            },
+            {
+                "id": 7,
+                "name": "Pegar-se amb un company",
+                "emoji": "🤼",
+                "points": 4
+            },
+            {
+                "id": 8,
+                "name": "No fer cas del mestre/a",
+                "emoji": "👨‍🏫",
+                "points": 5
+            }
+        ]));
+    }
+}
+
+//Check if localstorage positive exists, otherwise create it
+const checkIfExchangeLsExist = () => {
+    var checkExchange = JSON.parse(localStorage.getItem("exchange"))
+    if (checkExchange == null) {
+        localStorage.setItem("exchange", JSON.stringify([
+            {
+                "id": 1,
+                "name": "Triar una cançó",
+                "emoji": "🎶",
+                "points": 1
+            },
+            {
+                "id": 2,
+                "name": "Corregir a la pissarra",
+                "emoji": "📝",
+                "points": 1
+            },
+            {
+                "id": 3,
+                "name": "Anar al lavabo",
+                "emoji": "🚾",
+                "points": 1
+            },
+            {
+                "id": 4,
+                "name": "Anar el primer a la fila",
+                "emoji": "🥇",
+                "points": 5
+            },
+            {
+                "id": 5,
+                "name": "Canvi de lloc durant un dia",
+                "emoji": "🔄",
+                "points": 15
+            },
+            {
+                "id": 6,
+                "name": "Mirar vídeos mentre esmorzem",
+                "emoji": "🎬",
+                "points": 10
+            },
+            {
+                "id": 7,
+                "name": "Asseure a la cadira del professor",
+                "emoji": "💺",
+                "points": 30
+            },
+            {
+                "id": 8,
+                "name": "Escollir què farem a classe",
+                "emoji": "🪄",
+                "points": 100
+            }
+        ]));
+    }
+}
+checkIfPositiveLsExist();
+checkIfNegativeLsExist();
+checkIfExchangeLsExist();
+
 var positiveData = JSON.parse(localStorage.getItem("positive") || []);
 
 
@@ -128,7 +303,7 @@ function Avatar(props) {
                             <ul>
                                 {positiveData.map((data) => {
                                     return (
-                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (addAll(), setCount(count + (data.points),correct())) : (setCount(count + (data.points)),correct())}>
+                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (addAll(), setCount(count + (data.points), correct())) : (setCount(count + (data.points)), correct())}>
                                             {data.emoji}&nbsp;
                                             {data.name}
                                             <span className="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
@@ -172,7 +347,7 @@ function Avatar(props) {
                             <ul>
                                 {positiveData.map((data) => {
                                     return (
-                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (addAll(), setCount(count + (data.points),correct())) : (setCount(count + (data.points)),correct())}>
+                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (addAll(), setCount(count + (data.points), correct())) : (setCount(count + (data.points)), correct())}>
                                             {data.emoji}&nbsp;
                                             {data.name}
                                             <span className="simpleCircle" style={{ backgroundColor: "green" }}> +{data.points}</span>
@@ -198,7 +373,7 @@ function Avatar(props) {
                             <ul>
                                 {exchangeData.map((data) => {
                                     return (
-                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - (data.points), exchange())) : setCount(count - (data.points),exchange())}>
+                                        <div className="cardDescription" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - (data.points), exchange())) : setCount(count - (data.points), exchange())}>
                                             {data.emoji}&nbsp;
                                             {data.name}
                                             <span className="simpleCircle" style={{ backgroundColor: "blue" }}> -{data.points}</span>
