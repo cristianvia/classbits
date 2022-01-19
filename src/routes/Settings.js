@@ -33,7 +33,7 @@ const Settings = () => {
             {/* Rules */}
             <div className="settings">
                 <p>Configuració de normes</p>
-                <p><Link to="/add">
+                <p><Link to="/addPositive">
                     <button className="button-success">Afegir positius</button>
                 </Link></p>
                 <p><Link to="/add">
