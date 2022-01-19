@@ -3,7 +3,6 @@ import { Navigate, useHistory, useNavigate, useParams } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
-import StudentHeader from "../Components/StudentHeader/StudentHeader"
 import imageCompression from 'browser-image-compression';
 
 //get last id from array
@@ -111,7 +110,6 @@ const AddStudent = () => {
     return (
         <div>
             <Header />
-            <StudentHeader />
             <h2 style={{ textAlign: "center" }}>Afegir alumne</h2>
             <form id="addStudentForm"
                 style={{

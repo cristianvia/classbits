@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./EditClassroom.css";
 
 import Header from '../Components/Header/Header';
-import StudentHeader from "../Components/StudentHeader/StudentHeader"
 
 
 const EditClassroom = () => {
@@ -27,7 +26,6 @@ const EditClassroom = () => {
     return (
         <>
             <Header />
-            <StudentHeader />
             <div style={{ marginTop: "100px" }}>
                 <table className="styled-table">
                     <thead>

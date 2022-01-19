@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
-import StudentHeader from "../Components/StudentHeader/StudentHeader"
 import imageCompression from 'browser-image-compression';
 
 var imageCompressed = "";
@@ -100,7 +99,6 @@ const EditStudent = () => {
     return (
         <div>
             <Header />
-            <StudentHeader />
             <h2 style={{ textAlign: "center" }}>Editar {classroom[id].name} {classroom[id].surname} </h2>
             <form id="addStudentForm"
                 style={{
