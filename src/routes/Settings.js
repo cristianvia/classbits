@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function deleteClassroom() {
     if (
-        window.confirm("Estàs segur que vols borrar aquest alumne?")
+        window.confirm("Estàs segur que vols borrar aquesta classe?")
     ) {
         window.localStorage.clear();
         alert("Classe borrada correctament")
