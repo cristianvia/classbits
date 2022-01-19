@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import Tabs from "../Tab/Tabs";
 
-import positiveData from "../../data/positiveData.json";
+// import positiveData from "../../data/positiveData.json";
 import negativeData from "../../data/negativeData.json";
 import exchangeData from "../../data/exchangeData.json";
+
+var positiveData = JSON.parse(localStorage.getItem("positive") || []);
 
 
 const modalStyles = {
