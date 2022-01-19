@@ -11,7 +11,7 @@ function UpdateDataToLocalStorage(newBehaviourEdited) {
 
    positive[idBehaviour].name = newBehaviourEdited.name;
     positive[idBehaviour].emoji = newBehaviourEdited.emoji;
-    positive[idBehaviour].points = newBehaviourEdited.points;
+    positive[idBehaviour].points = parseInt(newBehaviourEdited.points);
 
     // Re-serialize the array back into a string and store it in localStorage
     localStorage.setItem('positive', JSON.stringify(positive));
@@ -74,8 +74,8 @@ const EditPositive = () => {
                 <label htmlfor="surnameInput">Emoji</label>
                 <input type="text" id="surnameInput" name="emoji" />
 
-                <label htmlfor="pictureInput">Punts</label>
-                <input type="number" id="pictureInput" name="points" />
+                <label htmlfor="pointsInput">Punts</label>
+                <input type="number" id="pointsInput" name="points" />
 
                 <input type="submit" value="Guardar" />
             </form>
