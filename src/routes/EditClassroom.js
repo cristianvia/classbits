@@ -19,6 +19,8 @@ const EditClassroom = () => {
             classroom.splice(id,1)
             // Re-serialize the array back into a string and store it in localStorage
             localStorage.setItem('classroom', JSON.stringify(classroom));
+            //Remove item from localstorage so it doesn't recover old data from deleted item
+            localStorage.removeItem(id);
         }
         setTimeout(() => window.location.reload(), 500)
     };

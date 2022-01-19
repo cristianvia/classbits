@@ -4,7 +4,7 @@ import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
 
-let arrayClassroom = JSON.parse(localStorage.getItem("positive"))
+let arrayClassroom = JSON.parse(localStorage.getItem("positive") || []);
 //get last object of the array
 const lastItem = arrayClassroom[arrayClassroom.length -1]
 const countId = lastItem.id;
