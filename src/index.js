@@ -15,7 +15,9 @@ import reportWebVitals from './reportWebVitals';
 import AddStudent from "./routes/AddStudent";
 import AddPositive from "./routes/AddPositive";
 import EditStudent from "./routes/EditStudent";
+import EditBehaviourP from "./routes/EditBehaviourP";
 import EditClassroom from "./routes/EditClassroom";
+import EditPositive from "./routes/EditPositive";
 import Settings from "./routes/Settings";
 
 ReactDOM.render(
@@ -35,6 +37,8 @@ ReactDOM.render(
         <Route path="addPositive" element={<AddPositive />} />
         <Route path="editclassroom" element={<EditClassroom />} />
         <Route path="update/:id" element={<EditStudent />} />
+        <Route path="editBehaviourP" element={<EditBehaviourP />} />
+        <Route path="updatePositive/:id" element={<EditPositive />} />
         <Route path="settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
