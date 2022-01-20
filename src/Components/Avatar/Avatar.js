@@ -284,6 +284,7 @@ function Avatar(props) {
                 <img src={props.img} width="250" alt="Avatar" />
                 <span className="name">{props.name}</span>
                 <span className="surname">{props.surname}</span>
+                {(props.pet == null) ? "" : <img className="pet" src={props.pet} width="50" alt="pet" />}
                 <button className="subtract-count" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
                 <button className="add-count" onClick={() => (props.id === 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>
