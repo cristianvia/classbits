@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import Tabs from "../Tab/Tabs";
 
-// import positiveData from "../../data/positiveData.json";
-// import negativeData from "../../data/negativeData.json";
-// import exchangeData from "../../data/exchangeData.json";
 
 //Check if localstorage positive exists, otherwise create it
 const checkIfPositiveLsExist = () => {
@@ -284,7 +281,7 @@ function Avatar(props) {
                 <img src={props.img} width="250" alt="Avatar" />
                 <span className="name">{props.name}</span>
                 <span className="surname">{props.surname}</span>
-                {(props.pet == null) ? "" : <img className="pet" src={props.pet} width="50" alt="pet" />}
+                {(props.pet == "") ? "" : <img className="pet" src={props.pet} alt="pet" />}
                 <button className="subtract-count" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
                 <button className="add-count" onClick={() => (props.id === 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>

@@ -50,6 +50,14 @@ body{
   display:none;
 }
 
+.pet{
+  position:relative; 
+  display:block;
+  left: 135px;
+  bottom:300px;
+  width: 100px;
+}
+
 .circle {
   border: 5px solid white;
   background-color: grey;
@@ -60,7 +68,6 @@ body{
   font-weight: 500;
   justify-content: right;
   position:relative; 
-  right:-180px; 
   top: 250px; 
   display: block;
   font-weight: bold;
