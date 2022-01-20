@@ -260,6 +260,7 @@ function App(props) {
                   name={data.name}
                   surname={data.surname}
                   img={data.img}
+                  pet={data.pet}
                 />
               </div>
             );
