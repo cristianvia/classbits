@@ -14,6 +14,7 @@ import DailySentence from './routes/DailySentence';
 import reportWebVitals from './reportWebVitals';
 import AddStudent from "./routes/AddStudent";
 import AddPositive from "./routes/AddPositive";
+import AddNegative from "./routes/AddNegative";
 import EditStudent from "./routes/EditStudent";
 import EditBehaviourP from "./routes/EditBehaviourP";
 import EditClassroom from "./routes/EditClassroom";
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path="dailySentence" element={<DailySentence />} />
         <Route path="add" element={<AddStudent />} />
         <Route path="addPositive" element={<AddPositive />} />
+        <Route path="addNegative" element={<AddNegative />} />
         <Route path="editclassroom" element={<EditClassroom />} />
         <Route path="update/:id" element={<EditStudent />} />
         <Route path="editBehaviourP" element={<EditBehaviourP />} />
