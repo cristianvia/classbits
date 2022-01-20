@@ -183,7 +183,7 @@ const checkIfExchangeLsExist = () => {
           "id": 8,
           "name": "Escollir què farem a classe",
           "emoji": "🪄",
-          "points": 100
+          "points": 99
       }  
   ]));
   }
