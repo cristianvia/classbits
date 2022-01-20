@@ -1,5 +1,9 @@
 .button-success {
     background: rgb(28, 184, 65);
+    margin-right: 10px;
+}
+.button-success:hover {
+    background: rgb(7, 138, 38);
 }
 
 .button-error {
@@ -16,9 +20,26 @@
 
 .button-secondary {
     background: rgb(66, 184, 221);
+    margin-right: 10px;
 }
+
+.button-secondary:hover {
+    background: rgb(1, 204, 255);
+}
+
 
 .settings {
     text-align: center;
     padding: 20px;
+}
+
+.settings{
+    display:flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerDivs{
+    text-align: center;
 }
