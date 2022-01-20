@@ -176,14 +176,14 @@ const checkIfExchangeLsExist = () => {
       },
       {
         "id": 7,
-        "name": "Asseure a la cadira del professor",
-        "emoji": "💺",
-        "points": 30
+        "name": "Aconseguir una mascota Bits",
+        "emoji": "🐶",
+        "points": 50
       },
       {
         "id": 8,
         "name": "Escollir què farem a classe",
-        "emoji": "🪄",
+        "emoji": "💡",
         "points": 99
       }
     ]));
@@ -207,7 +207,7 @@ const checkIfPetsLsExist = () => {
       },
       {
         "id": 3,
-        "name": "Squirte",
+        "name": "Squirtle",
         "img": "../../images/pets/chibi_squirtle.png",
       },
       {
@@ -229,6 +229,21 @@ const checkIfPetsLsExist = () => {
         "id": 7,
         "name": "Corets",
         "img": "../../images/pets/chibi_loving_dog.png",
+      },
+      {
+        "id": 8,
+        "name": "Thirsty",
+        "img": "../../images/pets/chibi_thirsty.png",
+      },
+      {
+        "id": 9,
+        "name": "Catty",
+        "img": "../../images/pets/chibi_cat.png",
+      },
+      {
+        "id": 10,
+        "name": "Lapras",
+        "img": "../../images/pets/chibi_lapras.png",
       },
       
     ]));
