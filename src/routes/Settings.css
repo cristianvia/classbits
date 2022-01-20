@@ -19,6 +19,7 @@
 
 .button-warning {
     background: rgb(223, 117, 20);
+    margin-right: 10px;
     width: 215px;
 
 }
@@ -38,6 +39,10 @@
 .settings {
     text-align: center;
     padding: 20px;
+}
+
+.settingsRules{
+    padding:0;
 }
 
 .settings{

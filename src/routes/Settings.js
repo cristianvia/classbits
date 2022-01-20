@@ -33,24 +33,24 @@ const Settings = () => {
                 {/* Rules */}
                 <h2>Configuració de normes</h2>
 
-                <div className="settings">
+                <div className="settings settingsRules">
                     <p><Link to="/addPositive">
                         <button className="button-success">Afegir positius</button>
                     </Link></p>
 
                     <p><Link to="/addNegative">
-                        <button className="button-success">Afegir negatius</button>
+                        <button className="button-warning">Afegir negatius</button>
                     </Link></p>
                     <p><Link to="/addExchange">
-                        <button className="button-success">Afegir bescanvis</button>
+                        <button className="button-secondary">Afegir bescanvis</button>
                     </Link></p>
                 </div>
-                <div className="settings">
+                <div className="settings settingsRules">
                     <p><Link to="/editBehaviourP">
-                        <button className="button-secondary">Editar positius</button>
+                        <button className="button-success">Editar positius</button>
                     </Link></p>
                     <p><Link to="/editBehaviourN">
-                        <button className="button-secondary">Editar negatius</button>
+                        <button className="button-warning">Editar negatius</button>
                     </Link></p>
 
                     <p><Link to="/editBehaviourE">
