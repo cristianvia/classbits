@@ -53,7 +53,7 @@ const Settings = () => {
                         <button className="button-secondary">Editar negatius</button>
                     </Link></p>
 
-                    <p><Link to="/add">
+                    <p><Link to="/editBehaviourE">
                         <button className="button-secondary">Editar bescanvis</button>
                     </Link></p>
                 </div>

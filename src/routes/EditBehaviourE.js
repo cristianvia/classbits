@@ -1,7 +1,12 @@
-    var negative = JSON.parse(localStorage.getItem("negative") || []);
+import React from 'react'
+import { Link } from "react-router-dom";
+import "./EditClassroom.css";
+
+import Header from '../Components/Header/Header';
+
+
+const EditBehaviourE = () => {
     var exchange = JSON.parse(localStorage.getItem("exchange") || []);
-
-
 
     const onDeleteExchange = (id) => {
         if (
@@ -11,14 +16,17 @@
             exchange.splice(id,1)
             // Re-serialize the array back into a string and store it in localStorage
             localStorage.setItem('exchange', JSON.stringify(exchange));
+            //Remove item from localstorage so it doesn't recover old data from deleted item
+            localStorage.removeItem(id);
         }
         setTimeout(() => window.location.reload(), 500)
     };
 
-
-
-
-                <h2 className="editTitle">Bescanvis</h2>
+    return (
+        <>
+            <Header />
+            <div style={{ marginTop: "50px" }}>
+            <h2 className="editTitle">Bescanvis</h2>
                 <table className="styled-table">
                     <thead>
                         <tr>
@@ -30,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.keys(negative).map((id, index) => {
+                        {Object.keys(exchange).map((id, index) => {
                             return (
                                 <tr key={id}>
                                     <th scope="row">{index + 1}</th>
@@ -38,14 +46,21 @@
                                     <td>{exchange[id].emoji}</td>
                                     <td>{exchange[id].points}</td>
                                     <td>
-                                        <Link to={`/updateBehaviour/${id}`}>
+                                        <Link to={`/updateExchange/${id}`}>
                                             <button className='btn btn-edit'>Editar</button>
                                         </Link>
                                         <button className='btn btn-delete'
-                                            onClick={() => onDeleteNegative(id)}>Borrar</button>
+                                            onClick={() => onDeleteExchange(id)}>Borrar</button>
                                     </td>
                                 </tr>
                             )
                         })}
                     </tbody>
                 </table>
+            </div>
+        </>
+
+    )
+}
+
+export default EditBehaviourE
