@@ -1,5 +1,6 @@
 input[type="text"],
 input[type="file"],
+input[list],
 input[type="number"],
 select{
     width:100%;
@@ -9,6 +10,10 @@ select{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+input[list]{
+    cursor: pointer;
 }
 
 input[type="submit"]{
