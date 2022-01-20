@@ -162,14 +162,14 @@ const checkIfExchangeLsExist = () => {
             },
             {
                 "id": 7,
-                "name": "Asseure a la cadira del professor",
-                "emoji": "💺",
-                "points": 30
-            },
+                "name": "Aconseguir una mascota Bits",
+                "emoji": "🐶",
+                "points": 50
+              },
             {
                 "id": 8,
                 "name": "Escollir què farem a classe",
-                "emoji": "🪄",
+                "emoji": "💡",
                 "points": 99
             }
         ]));
@@ -276,6 +276,7 @@ function Avatar(props) {
 
     return (
         <>
+            <div className="avatarContainer">
             <li className="avatarPointer" id={props.id} onClick={openModal}>
                 <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id === 0) ? "" : count}</span>
                 <img src={props.img} width="250" alt="Avatar" />
@@ -285,6 +286,7 @@ function Avatar(props) {
                 <button className="subtract-count" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
                 <button className="add-count" onClick={() => (props.id === 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
             </li>
+            </div>
             {(props.id === 0) ? <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}

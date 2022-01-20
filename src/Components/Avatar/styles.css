@@ -51,11 +51,15 @@ body{
 }
 
 .pet{
-  position:relative; 
+  position:absolute; 
   display:block;
   left: 135px;
-  bottom:300px;
+  bottom:90px;
   width: 100px;
+}
+
+.avatarContainer{
+  position: relative;
 }
 
 .circle {
