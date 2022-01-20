@@ -92,7 +92,8 @@ const AddStudent = () => {
                 id: countId + 1,
                 name: formData.get("name"),
                 surname: formData.get("surname"),
-                img: finalImageCompressed
+                img: finalImageCompressed,
+                pet: ""
             };
 
 
