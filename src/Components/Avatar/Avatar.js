@@ -165,7 +165,7 @@ const checkIfExchangeLsExist = () => {
                 "name": "Aconseguir una mascota Bits",
                 "emoji": "🐶",
                 "points": 50
-              },
+            },
             {
                 "id": 8,
                 "name": "Escollir què farem a classe",
@@ -277,15 +277,15 @@ function Avatar(props) {
     return (
         <>
             <div className="avatarContainer">
-            <li className="avatarPointer" id={props.id} onClick={openModal}>
-                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id === 0) ? "" : count}</span>
-                <img src={props.img} width="250" alt="Avatar" />
-                <span className="name">{props.name}</span>
-                <span className="surname">{props.surname}</span>
-                {(props.pet == "") ? "" : <img className="pet" src={props.pet} alt="pet" />}
-                <button className="subtract-count" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
-                <button className="add-count" onClick={() => (props.id === 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
-            </li>
+                <li className="avatarPointer" id={props.id} onClick={openModal}>
+                    <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : "circle"}>{(props.id === 0) ? "" : count}</span>
+                    <img src={props.img} width="250" alt="Avatar" />
+                    <span className="name">{props.name}</span>
+                    <span className="surname">{props.surname}</span>
+                    {(props.pet == "") ? "" : <img className="pet" src={props.pet} alt="pet" />}
+                    <button className="subtract-count" onClick={() => (props.id === 0) ? (substractAll(), setCount(count - 1)) : setCount(count - 1)}>-</button>&nbsp;
+                    <button className="add-count" onClick={() => (props.id === 0) ? (addAll(), setCount(count + 1)) : setCount(count + 1)}>+</button>
+                </li>
             </div>
             {(props.id === 0) ? <Modal
                 isOpen={modalIsOpen}
@@ -298,8 +298,6 @@ function Avatar(props) {
                 <div className="container">
                     <span className="counter">{(props.id === 0) ? "" : count}</span>
                     <img src={props.img} className="avatarImage" alt="Avatar" />
-
-
                     <Tabs>
                         <div label="👍 Positius">
                             <ul>
@@ -342,6 +340,7 @@ function Avatar(props) {
                 <div className="container">
                     <span className="counter">{(props.id === 0) ? "" : count}</span>
                     <img src={props.img} className="avatarImage" alt="Avatar" />
+                    {(props.pet == "") ? "" : <img className="petModal" src={props.pet} alt="pet" />}
 
 
                     <Tabs>
