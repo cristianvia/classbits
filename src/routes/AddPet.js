@@ -93,6 +93,9 @@ const AddPet = () => {
                 <option>Doggy</option>
                 <option>Foxy</option>
                 <option>Corets</option>
+                <option>Thirsty</option>
+                <option>Catty</option>
+                <option>Lapras</option>
                </datalist>
 
 
