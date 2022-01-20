@@ -49,7 +49,7 @@ const Settings = () => {
                     <p><Link to="/editBehaviourP">
                         <button className="button-secondary">Editar positius</button>
                     </Link></p>
-                    <p><Link to="/add">
+                    <p><Link to="/editBehaviourN">
                         <button className="button-secondary">Editar negatius</button>
                     </Link></p>
 

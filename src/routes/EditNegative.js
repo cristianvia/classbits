@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate, useHistory, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
 
-let arrayClassroom = JSON.parse(localStorage.getItem("negative") || []);
-//get last object of the array
-const lastItem = arrayClassroom[arrayClassroom.length -1]
-const countId = lastItem.id;
+var negative = JSON.parse(localStorage.getItem("negative") || []);
+var idBehaviour = "";
 
+function UpdateDataToLocalStorage(newBehaviourEdited) {
 
-function SaveDataToLocalStorage(dataFromState) {
-    var a = [];
-    // Parse the serialized data back into an aray of objects
-    a = JSON.parse(localStorage.getItem('negative')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
-    a.push(dataFromState);
-    // Alert the array value
+   negative[idBehaviour].name = newBehaviourEdited.name;
+    negative[idBehaviour].emoji = newBehaviourEdited.emoji;
+    negative[idBehaviour].points = parseInt(newBehaviourEdited.points);
+
     // Re-serialize the array back into a string and store it in localStorage
-    localStorage.setItem('negative', JSON.stringify(a));
+    localStorage.setItem('negative', JSON.stringify(negative));
 }
 
 
-const AddNegative = () => {
+const EditNegative = () => {
 
+    const { id } = useParams();
+    idBehaviour = id;
+    console.log(id)
 
     useEffect(() => {
 
@@ -35,15 +34,14 @@ const AddNegative = () => {
             const formData = new FormData(formElement);
 
             let data = {
-                id: countId + 1,
+                id: id,
                 name: formData.get("name"),
                 emoji: formData.get("emoji"),
-                points: parseInt(formData.get("points")),
+                points: formData.get("points"),
             };
 
-
-            SaveDataToLocalStorage(data);
-            alert("Negatiu afegit correctament")
+            UpdateDataToLocalStorage(data);
+            alert("Conducta modificada correctament")
             setTimeout(() => window.location.reload(), 500)
         };
 
@@ -52,11 +50,10 @@ const AddNegative = () => {
     }, []);
 
 
-
     return (
         <div>
             <Header />
-            <h2 style={{ textAlign: "center" }}>Afegir punts negatius</h2>
+            <h2 style={{ textAlign: "center" }}>Editar {negative[id].name} {negative[id].surname} </h2>
             <form id="addStudentForm"
                 style={{
                     margin: "auto",
@@ -77,13 +74,14 @@ const AddNegative = () => {
                 <label htmlfor="surnameInput">Emoji</label>
                 <input type="text" id="surnameInput" name="emoji" />
 
-                <label htmlfor="pictureInput">Punts a restar</label>
-                <input type="number" id="pictureInput" name="points" />
+                <label htmlfor="pointsInput">Punts a restar</label>
+                <input type="number" id="pointsInput" name="points" />
 
                 <input type="submit" value="Guardar" />
             </form>
+
         </div>
     )
 }
 
-export default AddNegative;
+export default EditNegative

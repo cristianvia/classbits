@@ -18,8 +18,10 @@ import AddNegative from "./routes/AddNegative";
 import AddExchange from "./routes/AddExchange";
 import EditStudent from "./routes/EditStudent";
 import EditBehaviourP from "./routes/EditBehaviourP";
+import EditBehaviourN from "./routes/EditBehaviourN";
 import EditClassroom from "./routes/EditClassroom";
 import EditPositive from "./routes/EditPositive";
+import EditNegative from "./routes/EditNegative";
 import Settings from "./routes/Settings";
 
 ReactDOM.render(
@@ -42,7 +44,9 @@ ReactDOM.render(
         <Route path="editclassroom" element={<EditClassroom />} />
         <Route path="update/:id" element={<EditStudent />} />
         <Route path="editBehaviourP" element={<EditBehaviourP />} />
+        <Route path="editBehaviourN" element={<EditBehaviourN />} />
         <Route path="updatePositive/:id" element={<EditPositive />} />
+        <Route path="updateNegative/:id" element={<EditNegative />} />
         <Route path="settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
