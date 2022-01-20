@@ -15,6 +15,7 @@ import reportWebVitals from './reportWebVitals';
 import AddStudent from "./routes/AddStudent";
 import AddPositive from "./routes/AddPositive";
 import AddNegative from "./routes/AddNegative";
+import AddExchange from "./routes/AddExchange";
 import EditStudent from "./routes/EditStudent";
 import EditBehaviourP from "./routes/EditBehaviourP";
 import EditClassroom from "./routes/EditClassroom";
@@ -37,6 +38,7 @@ ReactDOM.render(
         <Route path="add" element={<AddStudent />} />
         <Route path="addPositive" element={<AddPositive />} />
         <Route path="addNegative" element={<AddNegative />} />
+        <Route path="addExchange" element={<AddExchange />} />
         <Route path="editclassroom" element={<EditClassroom />} />
         <Route path="update/:id" element={<EditStudent />} />
         <Route path="editBehaviourP" element={<EditBehaviourP />} />

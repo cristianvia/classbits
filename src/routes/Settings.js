@@ -41,7 +41,7 @@ const Settings = () => {
                     <p><Link to="/addNegative">
                         <button className="button-success">Afegir negatius</button>
                     </Link></p>
-                    <p><Link to="/add">
+                    <p><Link to="/addExchange">
                         <button className="button-success">Afegir bescanvis</button>
                     </Link></p>
                 </div>

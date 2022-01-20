@@ -5,7 +5,7 @@ import Tabs from "../Tab/Tabs";
 
 // import positiveData from "../../data/positiveData.json";
 // import negativeData from "../../data/negativeData.json";
-import exchangeData from "../../data/exchangeData.json";
+// import exchangeData from "../../data/exchangeData.json";
 
 //Check if localstorage positive exists, otherwise create it
 const checkIfPositiveLsExist = () => {
@@ -184,6 +184,7 @@ checkIfExchangeLsExist();
 
 var positiveData = JSON.parse(localStorage.getItem("positive") || []);
 var negativeData = JSON.parse(localStorage.getItem("negative") || []);
+var exchangeData = JSON.parse(localStorage.getItem("exchange") || []);
 
 
 const modalStyles = {
