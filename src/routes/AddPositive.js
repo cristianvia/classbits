@@ -38,7 +38,7 @@ const AddPositive = () => {
                 id: countId + 1,
                 name: formData.get("name"),
                 emoji: formData.get("emoji"),
-                points: formData.get("points"),
+                points: parseInt(formData.get("points")),
             };
 
 
