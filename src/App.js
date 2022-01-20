@@ -12,7 +12,8 @@ const checkIfClassroomLsExist = () => {
       "id": 0,
       "name": "Tota la classe",
       "surname": "",
-      "img": "../../images/chibi_classroom.png"
+      "img": "../../images/chibi_classroom.png",
+      "pet": ""
     }]));
   }
 }
