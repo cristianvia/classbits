@@ -38,7 +38,7 @@ const Settings = () => {
                         <button className="button-success">Afegir positius</button>
                     </Link></p>
 
-                    <p><Link to="/add">
+                    <p><Link to="/addNegative">
                         <button className="button-success">Afegir negatius</button>
                     </Link></p>
                     <p><Link to="/add">
