@@ -30,8 +30,8 @@ export default function Home() {
               <div class="steps">1</div>
             </div>
             <div class="cardDescription">
-              <Link to="/add">
-                Comença a jugar
+              <Link to="/settings">
+                Configura la classe
                 <img src="../../images/chibi_ironman.png" alt="iron man classbits" width="150" />
                 <div class="steps">2</div>
               </Link>
