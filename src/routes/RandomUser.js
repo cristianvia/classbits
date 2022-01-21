@@ -32,6 +32,7 @@ export default function RandomUser() {
                             name={randomAvatar.name}
                             surname={randomAvatar.surname}
                             img={randomAvatar.img}
+                            pet={(randomAvatar.pet == "") ? "" : <img className="pet" src={randomAvatar.pet} alt="pet" />}
                         />
                     </div>
                 </div>
