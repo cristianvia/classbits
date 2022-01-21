@@ -39,7 +39,7 @@ const AddPet = () => {
                 name: formData.get("name"),
                 surname: formData.get("surname"),
                 img: formData.get("img"),
-                pet: pets.find( petImg => petImg.name === formData.get("pet")).img
+                pet: ((formData.get("pet") == "Treure mascota") ? "" : pets.find( petImg => petImg.name === formData.get("pet")).img)
             };
 
             UpdateDataToLocalStorage(data);
@@ -86,6 +86,7 @@ const AddPet = () => {
                 <input id="petInput" name="pet" list="pets" placeholder="Clica'm"/>
 
                 <datalist id="pets"> 
+                <option>Treure mascota</option>
                 <option>Pikachu</option>
                 <option>Squirtle</option>
                 <option>Bulbasaur</option> 
