@@ -245,6 +245,16 @@ const checkIfPetsLsExist = () => {
         "name": "Lapras",
         "img": "../../images/pets/chibi_lapras.png",
       },
+      {
+        "id": 11,
+        "name": "Dino",
+        "img": "../../images/pets/chibi_dino.png",
+      },
+      {
+        "id": 10,
+        "name": "Unicorn",
+        "img": "../../images/pets/chibi_unicorn.png",
+      }
       
     ]));
   }
