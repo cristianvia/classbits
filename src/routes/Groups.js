@@ -46,7 +46,7 @@ export default function Groups() {
     var htmlresult = "";
 
     for (var i = 0; i < group.length; i++) {
-      htmlresult += "<div class='avatarGroups'><div style='text-align:center;'><strong> Grupo " + (i + 1) + "</strong></div><ul>";
+      htmlresult += "<div class='avatarGroups'><div style='text-align:center;'><strong> Grup " + (i + 1) + "</strong></div><ul>";
       for (var j = 0; j < group[i].length; j++) {
         htmlresult += "<li>" + group[i][j] + "</li><br>";
       }
