@@ -56,7 +56,7 @@ body{
   left: 135px;
   bottom:90px;
   width: 100px;
-  animation: MoveUpDown 1s linear infinite;
+  animation: MoveUpDown 10s linear infinite;
 }
 
 @keyframes MoveUpDown {
