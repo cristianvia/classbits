@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./AddEdit.css";
 
 import Header from '../Components/Header/Header';
@@ -128,7 +129,11 @@ const EditStudent = () => {
                 />
 
                 <input type="submit" value="Guardar" />
+                <Link to={`/addPet/${id}`}>
+                    <button className='button-add-pet'>🐶 Afegir mascota</button>
+                </Link>
             </form>
+
 
         </div>
     )

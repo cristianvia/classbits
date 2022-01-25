@@ -49,9 +49,6 @@ const EditClassroom = () => {
                                         <Link to={`/update/${id}`}>
                                             <button className='btn btn-edit'>Editar</button>
                                         </Link>
-                                        <Link to={`/addPet/${id}`}>
-                                            <button className='btn btn-edit'>Afegir mascota</button>
-                                        </Link>
                                         <button className='btn btn-delete'
                                             onClick={() => onDelete(id)}>Borrar</button>
                                     </td>
