@@ -31,6 +31,22 @@ input[type="submit"]:hover{
     background-color: #45a049;
 }
 
+.button-add-pet{
+    width:100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e98527;
+    font-size: 15px;
+}
+
+.button-add-pet:hover{
+    background-color: #b46318;
+}
+
 .warningRegister{
     background-color: #e98527;
     padding: 25px;
