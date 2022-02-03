@@ -1,15 +1,21 @@
 import Header from '../Components/Header/Header';
 import './RandomUserStyles.css';
 import Avatar from '../Components/Avatar/Avatar';
-import React from 'react/cjs/react.development';
+import React, { useState } from 'react';
 
 
 export default function RandomUser() {
     var randomAvatar = [];
     var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
+    const [refresh, setRefresh] = useState(0);
+
+    // function refreshPage() {
+    //     window.location.reload(false);
+    // }
+
     function refreshPage() {
-        window.location.reload(false);
+        setRefresh(refresh + 1)
     }
 
     const getRandomAvatar = () => {
@@ -27,13 +33,14 @@ export default function RandomUser() {
                 <div style={{ padding: 70 }}>
                     <button class="createRandomButton" onClick={refreshPage}> Usuari aleatori </button>
                     <div class="randAvatar">
-                        <Avatar
+                        {(refresh == 0) ? "" : <Avatar
                             id={randomAvatar.id}
                             name={randomAvatar.name}
                             surname={randomAvatar.surname}
                             img={randomAvatar.img}
                             pet={(randomAvatar.pet == "") ? "" : randomAvatar.pet}
-                        />
+                        />}
+
                     </div>
                 </div>
 
