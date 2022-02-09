@@ -2,6 +2,10 @@ html{
   background-color: #F5F5F3;
 }
 
+body{
+  overflow: hidden;
+}
+
 .apps {
 	width: 100%;
 	margin:  10px auto;
@@ -87,7 +91,7 @@ html{
     width: 150px;
     color: black;
     margin: 0px;
-    padding:15px;
+    padding:20px;
     text-align: center;
   }
   .apps ul{
