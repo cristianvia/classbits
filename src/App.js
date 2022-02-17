@@ -24,13 +24,13 @@ const checkIfPositiveLsExist = () => {
     localStorage.setItem("positive", JSON.stringify([
       {
         "id": 1,
-        "name": "Endreça i ajuda a endreçar",
+        "name": "Endreçar i ajudar a endreçar",
         "emoji": "📦",
         "points": 1
       },
       {
         "id": 2,
-        "name": "Està per la feina",
+        "name": "Estar per la feina",
         "emoji": "✏️",
         "points": 1
       },
@@ -42,7 +42,7 @@ const checkIfPositiveLsExist = () => {
       },
       {
         "id": 4,
-        "name": "Participa",
+        "name": "Participar",
         "emoji": "🙋‍♂️",
         "points": 1
       },
@@ -54,13 +54,13 @@ const checkIfPositiveLsExist = () => {
       },
       {
         "id": 6,
-        "name": "S'esforça molt",
+        "name": "Esforçar-se molt",
         "emoji": "💪",
         "points": 1
       },
       {
         "id": 7,
-        "name": "Treballa en equip",
+        "name": "Treballar en equip",
         "emoji": "🧑‍🤝‍🧑",
         "points": 1
       },
@@ -68,7 +68,7 @@ const checkIfPositiveLsExist = () => {
         "id": 8,
         "name": "Treure un excel·lent",
         "emoji": "💯",
-        "points": 2
+        "points": 3
       }
 
     ]));
@@ -101,7 +101,7 @@ const checkIfNegativeLsExist = () => {
       },
       {
         "id": 4,
-        "name": "No fer silenci",
+        "name": "No portar el material",
         "emoji": "🤐",
         "points": 1
       },
