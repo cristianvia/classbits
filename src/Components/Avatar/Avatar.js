@@ -278,7 +278,7 @@ function Avatar(props) {
         <>
             <div className="avatarContainer">
                 <li className="avatarPointer" id={props.id} onClick={openModal}>
-                <span className={(count > 0) ? "circleGreen" : (count < 0) ? "circleRed" : (props.id == 0) ? "hidenCircle" : "circle"}>{(props.id === 0) ? "" : count}</span>
+                <span className={(count > 0) ? (props.id == 0) ? "hidenCircle" : "circleGreen" : (count < 0) ? (props.id == 0) ? "hidenCircle" : "circleRed" : (props.id == 0) ? "hidenCircle" : "circle"}>{(props.id === 0) ? "" : count}</span>
                     <img src={props.img} width="250" alt="Avatar" />
                     <span className="name">{props.name}</span>
                     <span className="surname">{props.surname}</span>
