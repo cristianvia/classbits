@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../Components/Header/Header';
+import "./EditClassroom.css";
 
 
 const ExchangePoints = () => {
@@ -48,10 +49,12 @@ const ExchangePoints = () => {
         alert("Intercanvi realitzat amb èxit!");
     }
 
+
     return (
         <>
             <Header />
-            <div>
+            <div class="editTitle">
+                <h2>Transferència de punts</h2>
                 <select id="sender">
                     <option value="">Donar punts</option>
                 </select>
@@ -61,7 +64,7 @@ const ExchangePoints = () => {
                 <select id="receiver">
                     <option value="">Rebre punts</option>
                 </select>
-                <button onClick={exchangePoints}>
+                <button class="btn btn-edit" onClick={exchangePoints}>
                     Fer transferència
                 </button>
 
