@@ -26,6 +26,7 @@ import EditPositive from "./routes/EditPositive";
 import EditNegative from "./routes/EditNegative";
 import EditExchange from "./routes/EditExchange";
 import Settings from "./routes/Settings";
+import ExchangePoints from "./routes/ExchangePoints";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -54,6 +55,7 @@ ReactDOM.render(
         <Route path="updateNegative/:id" element={<EditNegative />} />
         <Route path="updateExchange/:id" element={<EditExchange />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="exchange" element={<ExchangePoints />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

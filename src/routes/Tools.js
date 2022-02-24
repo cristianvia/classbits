@@ -45,6 +45,12 @@ export default function Tools() {
             </Link>
             <figcaption class="textCaption">Cronòmetre</figcaption>
           </div>
+          <div>
+            <Link to="/exchange">
+              <img src="../../images/tools/exchange.png" alt="Intercanvi" class="toolsCircle" />
+            </Link>
+            <figcaption class="textCaption">Intercanvi de punts</figcaption>
+          </div>
         </div>
       </div>
     </>
