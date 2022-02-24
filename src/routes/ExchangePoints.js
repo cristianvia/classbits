@@ -21,6 +21,18 @@ const ExchangePoints = () => {
           }
     }, []);
     
+    const exchangePoints = () => {
+        var e = document.getElementById("sender");
+        var senderId = e.value;
+
+        var e = document.getElementById("receiver");
+        var receiverId = e.value;
+
+        var e = document.getElementById("points");
+        var points = e.value;
+        console.log(points)
+
+    }
 
     return (
         <>
@@ -30,12 +42,12 @@ const ExchangePoints = () => {
                     <option value="">Donar punts</option>
                 </select>
 
-                <input type="number"></input>
+                <input type="number" id="points"></input>
 
                 <select id="receiver">
                     <option value="">Rebre punts</option>
                 </select>
-                <button>
+                <button onClick={exchangePoints}>
                     Fer transferència
                 </button>
 
