@@ -10,7 +10,7 @@ export default function Groups() {
     //Must ensure everytime it's called starts empty
     arrayChibits = [];
     classroom.map((data) => {
-      arrayChibits.push(data.name);
+      arrayChibits.push(data.name+" "+data.surname);
     })
     //shift() = removes first element of array (the whole class)
     arrayChibits.shift();
