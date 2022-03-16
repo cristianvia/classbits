@@ -5,7 +5,7 @@ import "./EditClassroom.css";
 
 const ExchangePoints = () => {
     var classroom = JSON.parse(localStorage.getItem("classroom") || []);
-    let audioExchange = new Audio("./audio/exchange.wav")
+    let audioExchange = new Audio("./audio/sent.mp3")
 
 
     useEffect(() => {
@@ -41,12 +41,11 @@ const ExchangePoints = () => {
         var senderActualPoints = parseInt(localStorage.getItem(senderId));
         var receiverActualPoints = parseInt(localStorage.getItem(receiverId));
 
-        //ACONSEGUIR QUE RESTI, CAL ACONSEGUIR TROBAR EL VALOR ACTUAL DEL STORAGE I INCREMENTARLO O FER-LO BAIXAR
-
         window.localStorage.setItem(senderId, senderActualPoints - parseInt(points));
         window.localStorage.setItem(receiverId, receiverActualPoints + parseInt(points));
         exchangeSound();
         alert("Intercanvi realitzat amb èxit!");
+        setTimeout(() => window.location.reload(), 500)
     }
 
 
