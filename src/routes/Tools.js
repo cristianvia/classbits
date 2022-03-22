@@ -51,6 +51,12 @@ export default function Tools() {
             </Link>
             <figcaption class="textCaption">Intercanvi de punts</figcaption>
           </div>
+          <div>
+            <Link to="/petforest">
+              <img src="../../images/tools/pets.png" alt="Intercanvi" class="toolsCircle" />
+            </Link>
+            <figcaption class="textCaption">Bosc de les mascotes</figcaption>
+          </div>
         </div>
       </div>
     </>
