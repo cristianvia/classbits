@@ -7,7 +7,7 @@
     },
     {
         "id": 2,
-        "name": "Està per la feina",
+        "name": "Treure un notable alt",
         "emoji": "✏️",
         "points": 1
     },
@@ -45,7 +45,7 @@
         "id": 8,
         "name": "Treure un excel·lent",
         "emoji": "💯",
-        "points": 2
+        "points": 3
     }
 
 ]
