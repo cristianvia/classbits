@@ -11,13 +11,13 @@ const checkIfPositiveLsExist = () => {
         localStorage.setItem("positive", JSON.stringify([
             {
                 "id": 1,
-                "name": "Endreça i ajuda a endreçar",
+                "name": "Ser honest",
                 "emoji": "📦",
                 "points": 1
             },
             {
                 "id": 2,
-                "name": "Està per la feina",
+                "name": "Treure notable alt",
                 "emoji": "✏️",
                 "points": 1
             },
@@ -47,7 +47,7 @@ const checkIfPositiveLsExist = () => {
             },
             {
                 "id": 7,
-                "name": "Treballa en equip",
+                "name": "Ajuda als companys",
                 "emoji": "🧑‍🤝‍🧑",
                 "points": 1
             },
@@ -55,7 +55,7 @@ const checkIfPositiveLsExist = () => {
                 "id": 8,
                 "name": "Treure un excel·lent",
                 "emoji": "💯",
-                "points": 2
+                "points": 3
             }
 
         ]));
@@ -132,25 +132,25 @@ const checkIfExchangeLsExist = () => {
             },
             {
                 "id": 2,
-                "name": "Corregir a la pissarra",
+                "name": "Canvi de nick",
                 "emoji": "📝",
-                "points": 1
+                "points": 5
             },
             {
                 "id": 3,
-                "name": "Anar al lavabo",
+                "name": "Invocar el pergamí del destí",
                 "emoji": "🚾",
-                "points": 1
+                "points": 5
             },
             {
                 "id": 4,
-                "name": "Anar el primer a la fila",
+                "name": "Canvi de chibit",
                 "emoji": "🥇",
                 "points": 5
             },
             {
                 "id": 5,
-                "name": "Canvi de lloc durant un dia",
+                "name": "Canvi de lloc durant una setmana",
                 "emoji": "🔄",
                 "points": 15
             },
