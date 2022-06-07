@@ -293,19 +293,23 @@ const addPointsPetHolder = () => {
   if (isFriday(todayDate) == false) {
     localStorage.setItem("securityCheck2", true);
   }
-  //If friday, activate secCheck2
+  //If friday, activate secCheck1
   if (isFriday(todayDate)) {
     localStorage.setItem("securityCheck1", true);
   }
   //If we get both secChecks true, it means 7 days has passed and we can add points
-  if (securityCheck1 == true && securityCheck2 == true) {
+  if (securityCheck1 == "true" && securityCheck2 == "true") {
     //ADD 7 POINTS
     console.log("both security checks are true")
     classroom.forEach(petHolder => {
       if (petHolder.pet != "") {
-        console.log(petHolder.id)
-        //localStorage.setItem("securityCheck2", false);
+        var idPetHolder = petHolder.id;
+        var currentPoints = localStorage.getItem(idPetHolder);
+        var addedPoints = parseInt(currentPoints) + 7;
+        localStorage.setItem(idPetHolder,addedPoints)
       }
+      localStorage.setItem("securityCheck2", false);
+      localStorage.setItem("securityCheck1", false);
     })
   }
 
