@@ -270,6 +270,20 @@ checkIfExchangeLsExist();
 
 var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
+//Add pet points each week
+/*
+Check if date is Friday (https://bobbyhadz.com/blog/javascript-check-if-date-is-monday#:~:text=Use%20the%20getDay()%20method,week%2C%20where%20Monday%20is%201%20.)
+if friday then securityCheck1 = true
+
+If it is friday and securityCheck1 & securityCheck2 = true add 7 points to students with a pet
+securityCheck1 = false
+securityCheck1 = false
+
+If !friday
+securityCheck1 = false;
+securityCheck2 = true;
+*/
+
 function App(props) {
 
   return (
