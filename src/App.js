@@ -306,16 +306,12 @@ const addPointsPetHolder = () => {
         var idPetHolder = petHolder.id;
         var currentPoints = localStorage.getItem(idPetHolder);
         var addedPoints = parseInt(currentPoints) + 7;
-        localStorage.setItem(idPetHolder,addedPoints)
+        localStorage.setItem(idPetHolder, addedPoints)
       }
       localStorage.setItem("securityCheck2", false);
       localStorage.setItem("securityCheck1", false);
     })
   }
-
-  console.log("sec1", securityCheck1)
-  console.log("sec2", securityCheck2)
-
 
 }
 
