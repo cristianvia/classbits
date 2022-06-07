@@ -24,52 +24,52 @@ const checkIfPositiveLsExist = () => {
     localStorage.setItem("positive", JSON.stringify([
       {
         "id": 1,
-        "name": "Endreçar i ajudar a endreçar",
-        "emoji": "📦",
+        "name": "Ser honest",
+        "emoji": "⚖️",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 2,
-        "name": "Estar per la feina",
-        "emoji": "✏️",
+        "name": "Treure notable alt",
+        "emoji": "⬆️",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 3,
         "name": "Fer l'encàrrec molt bé",
         "emoji": "🎩",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 4,
-        "name": "Participar",
+        "name": "Participa",
         "emoji": "🙋‍♂️",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 5,
         "name": "Pergamí del destí",
         "emoji": "📜",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 6,
-        "name": "Esforçar-se molt",
+        "name": "S'esforça molt",
         "emoji": "💪",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 7,
-        "name": "Treballar en equip",
+        "name": "Ajuda als companys",
         "emoji": "🧑‍🤝‍🧑",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 8,
         "name": "Treure un excel·lent",
         "emoji": "💯",
         "points": 3
-      }
+    }
 
     ]));
   }
@@ -143,49 +143,49 @@ const checkIfExchangeLsExist = () => {
         "name": "Triar una cançó",
         "emoji": "🎶",
         "points": 1
-      },
-      {
+    },
+    {
         "id": 2,
-        "name": "Corregir a la pissarra",
+        "name": "Canvi de nick",
         "emoji": "📝",
-        "points": 1
-      },
-      {
-        "id": 3,
-        "name": "Anar al lavabo",
-        "emoji": "🚾",
-        "points": 1
-      },
-      {
-        "id": 4,
-        "name": "Anar el primer a la fila",
-        "emoji": "🥇",
         "points": 5
-      },
-      {
+    },
+    {
+        "id": 3,
+        "name": "Invocar el pergamí del destí",
+        "emoji": "📜",
+        "points": 5
+    },
+    {
+        "id": 4,
+        "name": "Canvi de chibit",
+        "emoji": "🎭",
+        "points": 5
+    },
+    {
         "id": 5,
-        "name": "Canvi de lloc durant un dia",
+        "name": "Canvi de lloc durant una setmana",
         "emoji": "🔄",
         "points": 15
-      },
-      {
+    },
+    {
         "id": 6,
         "name": "Mirar vídeos mentre esmorzem",
         "emoji": "🎬",
         "points": 10
-      },
-      {
+    },
+    {
         "id": 7,
         "name": "Aconseguir una mascota Bits",
         "emoji": "🐶",
         "points": 50
-      },
-      {
+    },
+    {
         "id": 8,
         "name": "Escollir què farem a classe",
         "emoji": "💡",
         "points": 99
-      }
+    }
     ]));
   }
 }

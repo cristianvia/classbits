@@ -12,13 +12,13 @@ const checkIfPositiveLsExist = () => {
             {
                 "id": 1,
                 "name": "Ser honest",
-                "emoji": "📦",
+                "emoji": "⚖️",
                 "points": 1
             },
             {
                 "id": 2,
                 "name": "Treure notable alt",
-                "emoji": "✏️",
+                "emoji": "⬆️",
                 "points": 1
             },
             {
@@ -139,13 +139,13 @@ const checkIfExchangeLsExist = () => {
             {
                 "id": 3,
                 "name": "Invocar el pergamí del destí",
-                "emoji": "🚾",
+                "emoji": "📜",
                 "points": 5
             },
             {
                 "id": 4,
                 "name": "Canvi de chibit",
-                "emoji": "🥇",
+                "emoji": "🎭",
                 "points": 5
             },
             {
