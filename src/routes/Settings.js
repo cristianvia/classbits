@@ -18,10 +18,10 @@ function deleteClassroom() {
 //delete points
 function resetPoints() {
     for (let index = 0; index < classroom.length; index++) {
-        localStorage.setItem(index, 0)      
+        localStorage.setItem(index, 0)
     }
     alert("Punts restaurats a 0")
-        setTimeout(() => window.location.reload(), 500)
+    setTimeout(() => window.location.reload(), 500)
 }
 
 //Backup functions
@@ -112,8 +112,10 @@ const Settings = () => {
                     <p><Link to="/EditClassroom">
                         <button className="button-secondary">Editar alumnes</button>
                     </Link></p>
-                    <p><button className="button-error" onClick={deleteClassroom}>Borrar classe</button></p>&nbsp;
-                    <p><button className="button-error" onClick={resetPoints}>Reset punts</button></p>
+                </div>
+                <div className="settings settingsRules">
+                    <p><button className="button-warning" onClick={resetPoints}>Reset punts</button></p>
+                    <p><button className="button-error" onClick={deleteClassroom}>Borrar classe</button></p>&nbsp;&nbsp;
                 </div>
 
                 {/* Rules */}
