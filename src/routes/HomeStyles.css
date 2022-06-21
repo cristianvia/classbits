@@ -23,6 +23,14 @@ body{
     line-height: 1.5;
   }
 
+  .greenButton {
+    background-color: #4CAF50;
+    color:white;
+    border-radius: 20px;
+    width:25%!important;
+    font-size: 800;
+  }
+
   .upAndDown {
     animation: MoveUpDown 1s linear infinite;
     left: 0;

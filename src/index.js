@@ -28,6 +28,7 @@ import EditExchange from "./routes/EditExchange";
 import Settings from "./routes/Settings";
 import ExchangePoints from "./routes/ExchangePoints";
 import PetForest from "./routes/PetForest";
+import ChooseChibit from "./routes/ChooseChibit";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -58,6 +59,7 @@ ReactDOM.render(
         <Route path="settings" element={<Settings />} />
         <Route path="exchange" element={<ExchangePoints />} />
         <Route path="petforest" element={<PetForest />} />
+        <Route path="chooseChibit" element={<ChooseChibit />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
