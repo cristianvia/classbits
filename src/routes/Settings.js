@@ -3,6 +3,7 @@ import './Settings.css'
 import Header from '../Components/Header/Header';
 import { Link } from "react-router-dom";
 
+var classroom = JSON.parse(localStorage.getItem("classroom") || []);
 
 function deleteClassroom() {
     if (
@@ -12,6 +13,15 @@ function deleteClassroom() {
         alert("Classe borrada correctament")
         setTimeout(() => window.location.reload(), 500)
     }
+}
+
+//delete points
+function resetPoints() {
+    for (let index = 0; index < classroom.length; index++) {
+        localStorage.setItem(index, 0)      
+    }
+    alert("Punts restaurats a 0")
+        setTimeout(() => window.location.reload(), 500)
 }
 
 //Backup functions
@@ -102,7 +112,8 @@ const Settings = () => {
                     <p><Link to="/EditClassroom">
                         <button className="button-secondary">Editar alumnes</button>
                     </Link></p>
-                    <p><button className="button-error" onClick={deleteClassroom}>Borrar classe</button></p>
+                    <p><button className="button-error" onClick={deleteClassroom}>Borrar classe</button></p>&nbsp;
+                    <p><button className="button-error" onClick={resetPoints}>Reset punts</button></p>
                 </div>
 
                 {/* Rules */}
