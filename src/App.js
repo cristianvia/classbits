@@ -15,6 +15,9 @@ const checkIfClassroomLsExist = () => {
       "img": "../../images/chibi_classroom.png",
       "pet": ""
     }]));
+    //Add the first time securityChecks
+    localStorage.setItem("securityCheck1", null);
+    localStorage.setItem("securityCheck2", null);
   }
 }
 //Check if localstorage positive exists, otherwise create it
@@ -255,7 +258,7 @@ const checkIfPetsLsExist = () => {
         "name": "Unicorn",
         "img": "../../images/pets/chibi_unicorn.png",
       }
-      
+
     ]));
   }
 }
@@ -269,6 +272,50 @@ checkIfExchangeLsExist();
 
 
 var classroom = JSON.parse(localStorage.getItem("classroom") || []);
+
+//Add pet points each week
+
+const addPointsPetHolder = () => {
+  //Check if date is Friday (number 5 = friday)
+  //It will return true only if it is friday
+  function isFriday(date = new Date()) {
+    return date.getDay() === 5;
+  }
+  const todayDate = new Date();
+
+  //Get the 2 security checks
+  //securityCheck1 is true when is friday
+  //securityCheck2 is true when it is not friday
+
+  var securityCheck1 = localStorage.getItem("securityCheck1");
+  var securityCheck2 = localStorage.getItem("securityCheck2");
+  //If not friday, activate secCheck2
+  if (isFriday(todayDate) == false) {
+    localStorage.setItem("securityCheck2", true);
+  }
+  //If friday, activate secCheck1
+  if (isFriday(todayDate)) {
+    localStorage.setItem("securityCheck1", true);
+  }
+  //If we get both secChecks true, it means 7 days has passed and we can add points
+  if (securityCheck1 == "true" && securityCheck2 == "true") {
+    //ADD 7 POINTS
+    console.log("both security checks are true")
+    classroom.forEach(petHolder => {
+      if (petHolder.pet != "") {
+        var idPetHolder = petHolder.id;
+        var currentPoints = localStorage.getItem(idPetHolder);
+        var addedPoints = parseInt(currentPoints) + 7;
+        localStorage.setItem(idPetHolder, addedPoints)
+      }
+      localStorage.setItem("securityCheck2", false);
+      localStorage.setItem("securityCheck1", false);
+    })
+  }
+
+}
+
+addPointsPetHolder();
 
 function App(props) {
 
